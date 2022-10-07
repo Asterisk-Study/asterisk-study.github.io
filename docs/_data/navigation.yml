@@ -22,14 +22,12 @@ foo:
 main:
   - title: "Quick-Start Guide"
     url: /docs/quick-start-guide/
-  - title: "About"
-    url: /about/
-  - title: "Sample Posts"
-    url: /year-archive/
-  - title: "Sample Collections"
-    url: /collection-archive/
-  - title: "Terms &amp; Privacy Policy"
-    url: /terms/
+  - title: "알고리즘"
+    url: /Algorithm/
+  - title: "독서일지"
+    url: /ReadingBook/
+  - title: "복습일지"
+    url: /Repeat/
 
 
 # documentation links
