@@ -1,8 +1,8 @@
 ---
 layout: single
 title: "전예린 복습일지"
-categories: 복습일지
-tags: 전예린
+categories: 전예린
+tags: 복습일지
 ---
 
 ### 221011 
