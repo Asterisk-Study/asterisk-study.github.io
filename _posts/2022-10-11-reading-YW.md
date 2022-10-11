@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "이영우 독서일지: Clean Code"
-categories: 전예린
+categories: 이영우
 tags: 독서일지
 ---
 
