@@ -1,8 +1,8 @@
 ---
 layout: single
-title: "전예린 독서일지(1): 커리어스킬"
+title: "전예린 독서일지(1): 커리어 스킬"
 categories: 독서일지
-tags: 독서일지
+tags: 전예린
 ---
 
 ### 22.10.02 일요일 31p~66p
