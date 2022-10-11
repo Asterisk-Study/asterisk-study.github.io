@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Clean Code"
+title: "이영우 독서일지"
 categories: 이영우
 tags: 독서일지
 ---
