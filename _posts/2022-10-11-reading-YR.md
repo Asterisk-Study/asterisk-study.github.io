@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "전예린 독서일지(1): 커리어스킬"
-categories: 전예린
+categories: 독서일지
 tags: 독서일지
 ---
 
