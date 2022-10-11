@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "김일태 독서일지 : Clean Code"
+title: "Clean Code"
 categories: 김일태
 tags: 독서일지
 ---
