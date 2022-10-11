@@ -1,9 +1,11 @@
 ---
 layout: single
-title: “Deep Dive”
+title: "홍동화 독서일지: 모던 자바스크립트 Deep Dive”
 categories: 홍동화
 tags: 독서일지
 ---
+
+
 
 하이
 
