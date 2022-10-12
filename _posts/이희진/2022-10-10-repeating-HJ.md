@@ -1,8 +1,8 @@
 ---
 layout: single
 title: "이희진 복습일지"
-categories: 이희진
-tags: 복습일지
+categories: 복습일지
+tags: 이희진
 ---
 
 ### 221011 || URI vs URL
