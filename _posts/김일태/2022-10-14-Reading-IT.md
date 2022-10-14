@@ -1,8 +1,8 @@
 ---
 layout: single
 title: "Clean Code"
-categories: 김일태
-tags: 독서일지
+categories: 독서일지
+tags: 김일태
 ---
 
 ### 1. 깨끗한 코드
