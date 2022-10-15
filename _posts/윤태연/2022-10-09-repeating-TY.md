@@ -1,8 +1,8 @@
 ---
 layout: single
 title: "윤태연 복습일지"
-categories: 윤태연
-tags: 복습일지
+categories: 복습일지
+tags: 윤태연
 ---
 
 ## 221011 || 웹의 구조
