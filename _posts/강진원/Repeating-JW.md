@@ -1,4 +1,11 @@
-# AJAX 
+---
+layout: single
+title: "강진원 독서일지: 한 권으로 읽는 컴퓨터 구조와 프로그래밍"
+categories: 복습일지
+tags: 강진원
+---
+# 2022-10-16 SUN
+## AJAX 
 JavaScript, DOM, Fetch, XMLHttpRequest, HTML 등의 다양한 기술을 사용하는 웹 개발 기법
 
 AJAX (Asynchronous JavaScript And XMLHttpRequest)란 비동기 자바스크립트와 XML을 말한다. 서버와 통신하기 위해 XMLHttpRequest(https://developer.mozilla.org/ko/docs/Web/API/XMLHttpRequest) 객체를 사용하는 것을 말하며, <span style="color: #2D3748; background-color:#fff5b1;">**서버와 비동기적으로 데이터를 주고받는 자바스크립트 기술을 의미**한다.</span>
