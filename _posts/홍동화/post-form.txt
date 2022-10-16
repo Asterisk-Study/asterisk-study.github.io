@@ -1,0 +1,6 @@
+---
+layout: single
+title: "자유롭게 쓰되 되도록 다른 분들과 양식이 비슷하게~"
+categories: 독서일지 or 복습일지 중 하나
+tags: 본인 이름 적어 주세요!
+---
