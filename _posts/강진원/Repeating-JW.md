@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "강진원 독서일지: 한 권으로 읽는 컴퓨터 구조와 프로그래밍"
+title: "강진원 복습일지"
 categories: 복습일지
 tags: 강진원
 ---
