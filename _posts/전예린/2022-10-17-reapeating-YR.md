@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "전예린 복습일지"
+title: "전예린 복습일지(2)"
 categories: 복습일지
 tags: 전예린
 ---
