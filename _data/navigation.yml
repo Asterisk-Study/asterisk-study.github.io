@@ -4,8 +4,6 @@ main:
     url: /categories/
   - title: "Tag"
     url: /tags/
-  - title : "Jinwon"
-    url : /jinwon/
   #   url: https://mmistakes.github.io/minimal-mistakes/about/
   # - title: "Sample Posts"
   #   url: /year-archive/
