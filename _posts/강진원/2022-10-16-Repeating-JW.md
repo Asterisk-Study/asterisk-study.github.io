@@ -1,7 +1,7 @@
 ---
 layout: single
 title: "강진원 복습일지"
-Jinwon: 복습일지
+jinwon: 복습일지
 ---
 # 2022-10-16 SUN
 ## AJAX 
