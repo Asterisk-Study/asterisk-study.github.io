@@ -1,8 +1,8 @@
 
 ---
 layout: single
-title: 이유정 복습일지
-categories: 복습일지 
+title: 이유정  독서일지: 한 권으로 읽는 컴퓨터 구조와 프로그래밍
+categories: 
 tags: 이유정
 ---
 
