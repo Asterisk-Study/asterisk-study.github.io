@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "윤태연 복습일지"
+title: "윤태연 복습일지(1)"
 categories: 복습일지
 tags: 윤태연
 ---
