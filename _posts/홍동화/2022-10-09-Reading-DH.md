@@ -5,7 +5,7 @@ categories: 독서일지
 tags: 홍동화
 ---
 
-</br></br></br></br></br>
+<br/><br/><br/><br/><br/>
 
 ## 📌 1일차 [ 04장 변수 ]
 ![](https://velog.velcdn.com/images/fairytale779/post/3e9c1c86-bd5f-4a83-8ea3-9806a9e1b904/image.png)
