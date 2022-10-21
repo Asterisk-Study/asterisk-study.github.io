@@ -3,6 +3,7 @@ layout: single
 title: "강진원 독서일지: 한 권으로 읽는 컴퓨터 구조와 프로그래밍"
 categories: 독서일지
 tags: 강진원
+jinwon: 독서일지
 ---
 
 # 2022-10-10 (1일차)
