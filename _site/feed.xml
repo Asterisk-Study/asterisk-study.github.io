@@ -1,0 +1,854 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Asterisk</title>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <link>http://localhost:4000/</link>
+    <description>Asterisk</description>
+    <pubDate>Mon, 24 Oct 2022 23:39:45 +0900</pubDate>
+    
+      <item>
+        <title>김일태 복습일지</title>
+        <link>/%EA%B9%80%EC%9D%BC%ED%83%9C/%EB%B3%B5%EC%8A%B5%EC%9D%BC%EC%A7%80/2022/10/24/Review-IT.html</link>
+        <guid isPermaLink="true">/%EA%B9%80%EC%9D%BC%ED%83%9C/%EB%B3%B5%EC%8A%B5%EC%9D%BC%EC%A7%80/2022/10/24/Review-IT.html</guid>
+        <description>&lt;h1 id=&quot;json&quot;&gt;JSON&lt;/h1&gt;
+
+&lt;p&gt;인터넷으로 데이터를 주고받을 때 깔끔한 형식으로 정리한 데이터를 주고 받아야한다.&lt;br /&gt;
+이를 위해 고안된 데이터 담는 형식 중 하나이며 지금 가장 주류라고 생각하면 된다.&lt;/p&gt;
+
+&lt;h3 id=&quot;xml&quot;&gt;XML&lt;/h3&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;데이터이름&amp;gt;값&amp;lt;/데이터이름&amp;gt;
+// EX
+&amp;lt;삼성전자&amp;gt;50000&amp;lt;/삼성전자&amp;gt;
+&amp;lt;카카오&amp;gt;100000&amp;lt;/카카오&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;food&amp;gt;
+  &amp;lt;name&amp;gt;Belgian Waffles&amp;lt;/name&amp;gt;
+  &amp;lt;price&amp;gt;$5.95&amp;lt;/price&amp;gt;
+  &amp;lt;description&amp;gt; Belgian Waffles &amp;lt;/description&amp;gt;
+  &amp;lt;calories&amp;gt;650&amp;lt;/calories&amp;gt;
+&amp;lt;/food&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;JavaScript 쓰면 object 자료로 쉽게 변환이 가능하지만 작성하기 귀찮고 용량도 많이 잡아먹는다.&lt;/p&gt;
+
+&lt;h3 id=&quot;csv&quot;&gt;CSV&lt;/h3&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Year, Brand, Model
+1997, Ford, E350
+2000, Mercury, Cougar
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;표 형태를 이루고 있어 데이터베이스에 있던 내용을 CSV로 변환하기 쉽지만, 고차원 데이터는 표현이 어렵다.&lt;/p&gt;
+
+&lt;h3 id=&quot;jsonjavascript-object-notation&quot;&gt;JSON(JavaScript Object Notation)&lt;/h3&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{&quot;name&quot; : &quot;kim&quot;, &quot;age&quot; : 20}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;객체와 비슷한 형식을 가져 고차원 데이터도 표현이 가능하다.&lt;br /&gt;
+객체와 다른 점은 데이터마다 키값을 설정해야 하며 ““로 감싸야 한다.(키 값이 문자 취급)&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;JSON.stringify() // object나 array를 JSON 형식으로 변환
+JSON.parse() // JSON 형식을 다시 object나 array로 변환
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;dom&quot;&gt;DOM&lt;/h1&gt;
+
+&lt;h4 id=&quot;documentcreateelement&quot;&gt;document.createElement&lt;/h4&gt;
+&lt;p&gt;document의 createElement 메소드는 지정된 이름의 HTML 요소를 만들어 반환해준다.&lt;br /&gt;
+HTML 요소가 만들어지고 또 반환 되었다고 해서, 해당 요소가 곧장 웹 브라우저 화면에 추가되는 것은 아니다.&lt;br /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;appendchild&quot;&gt;appendChild&lt;/h4&gt;
+&lt;p&gt;appendChild 메소드는 DOM 내 개별 요소(노드)에 자식 요소를 추가할 때 사용하는 메소드이다.&lt;br /&gt;
+appendChild 메소드와 비슷한 역할을 하는 append 메소드도 있다.&lt;br /&gt;
+타겟 요소에 자식 요소를 추가한다는 점에서 같으나, 차이점도 존재한다.&lt;br /&gt;
+주요한 차이&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;appendChild의 경우 추가한 자식 노드를 반환하지만, append는 반환 데이터가 없다.&lt;/li&gt;
+  &lt;li&gt;append를 이용하면 요소에 노드 객체 또는 문자열을 자식 요소로 추가할 수 있지만, appendChild는 노드 객체만을 추가할 수 있다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;입력-요소-값-읽기&quot;&gt;입력 요소 값 읽기&lt;/h4&gt;
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;input&amp;gt;&lt;/code&gt;, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;select&amp;gt;&lt;/code&gt; 처럼 사용자로부터 입력을 받는 데 사용되는 요소들이 있다.&lt;br /&gt; 
+여기에서 사용자가 입력한 값을 읽어들일 때는 요소의 value 속성에 접근하자.&lt;br /&gt;
+차이를 기억하자&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;요소의 텍스트에 접근하고 싶다 : textContent 또는 innerText&lt;/li&gt;
+  &lt;li&gt;사용자가 요소에 입력한 값에 접근하고 싶다 : value&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;입력 요소의 value에 접근하여 할 수 있는 일은 크게 두 가지, 읽기와 쓰기이다.&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;console.log(target.value)
+target.value = &apos;변경값&apos;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-HTML&quot;&gt;  &amp;lt;form&amp;gt;
+    &amp;lt;input type=&quot;text&quot; placeholder=&quot;이름&quot; name=&quot;name&quot; /&amp;gt;
+    &amp;lt;input type=&quot;text&quot; placeholder=&quot;동네&quot; name=&quot;town&quot; /&amp;gt;
+    &amp;lt;input type=&quot;submit&quot; value=&quot;PUSH&quot; /&amp;gt;
+  &amp;lt;/form&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;form&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;quertSelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;form&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  
+  &lt;span class=&quot;nx&quot;&gt;form&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;submit&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;form&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;form&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;town&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 이렇게 하면 town만 나옴&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;form&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;quertSelector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;form&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  
+  &lt;span class=&quot;nx&quot;&gt;form&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;addEventListener&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;submit&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;preventDefault&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// 리다이렉션 없이 둘 다 출력됨, action 기능을 수행하고 있으면 안해도됨&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;form&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;form&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;town&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;form에서 이벤트가 제출되는 submit 이벤트가 발생하면 action 속성의 url로 리다이렉트되지만, 이벤트 객체를 통해 기본 기능을 차단할 수 있다.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 24 Oct 2022 00:00:00 +0900</pubDate>
+      </item>
+    
+      <item>
+        <title>김일태 독서일지 : 모던 자바스크립트 Deep Dive</title>
+        <link>/%EA%B9%80%EC%9D%BC%ED%83%9C/%EB%8F%85%EC%84%9C%EC%9D%BC%EC%A7%80/2022/10/24/Deep-Dive-Reading-IT.html</link>
+        <guid isPermaLink="true">/%EA%B9%80%EC%9D%BC%ED%83%9C/%EB%8F%85%EC%84%9C%EC%9D%BC%EC%A7%80/2022/10/24/Deep-Dive-Reading-IT.html</guid>
+        <description>&lt;h3 id=&quot;1장-프로그래밍&quot;&gt;1장. 프로그래밍&lt;/h3&gt;
+
+&lt;p&gt;프로그래밍은 요구사항의 집합을 분석해서 적절한 자료구조와 함수의 집합으로 변환한 후, 그 흐름을 제어하는 것&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2장-자바스크립트란&quot;&gt;2장. 자바스크립트란?&lt;/h3&gt;
+
+&lt;p&gt;렌더링이란 HTML, CSS, 자바스크립트로 작성된 문서를 해석해서 브라우저에 시각적으로 출력하는 것을 말함, 
+때로는 서버에서 데이터를 HTML로 변환해서 브라우저에게 전달하는 과정(SSR:Service Side Rendering)을 가리키도 함&lt;br /&gt;
+Ajax는 서버로부터 필요한 데이터만 전송받아 변경해야 하는 부분만 한정적으로 렌더링하는 방식을 가능하게 함&lt;br /&gt;
+jQuery의 등장으로 다소 번거롭고 논란이 있던 DOM을 더욱 쉽게 제어할 수 있게 되었고 크로스 브라우징 이슈도 어느 정도 해결됨&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;…..&lt;/p&gt;
+
+&lt;p&gt;…..&lt;/p&gt;
+
+&lt;h3 id=&quot;4장-변수&quot;&gt;4장. 변수&lt;/h3&gt;
+
+&lt;p&gt;자바스크립트는 개발자의 직접적인 메모리 제어를 허용하지 않는다.&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;변수는 프로그래밍 언어에서 값을 저장하고 참조하는 메커니즘으로, 값의 위치를 가리키는 상징적인 이름이다.&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;일반적으로 초기화란 변수가 선언된 이후 최초로 값을 할당하는 것을 말한다. 
+var 키워드로 선언한 변수는 undefined로 암묵적인 초기화가 자동 수행된다. 
+따라서 var 키워드로 선언한 변수는 어떠한 값도 할당하지 않아도 undefined라는 값을 갖는다.&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;변순 선언이 소스코드 한 줄씩 순차적으로 실행되는 시점, 즉 런타임이 아니라 그 이전 단계에서 먼저 실행한다. 
+변수 선언문이 코드의 선두로 끌어 올려진 것처럼 동작하는 자바스크립트의 고유의 특징을 변수 호이스팅이라 한다. 
+변수 선언뿐 아니라 모든 식별자(변수, 함수, 클래스 등)는 호이스팅한다. 
+모든 선언문은 런타임 이전 단계에서 먼저 실행되기 때문이다.&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;변수 선언은 소스코드가 순차적으로 실행되는 시점인 런타임 이전에 먼저 실행되지만 값의 할당은 소스코드가 순차적으로 실행되는 시점인 런타임에 실행된다.&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;값을 재할당할 수 없어서 변수에 저장된 값을 변경할 수 없다면 변수가 아니라 상수라 한다.&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;가비지 콜렉터는 애플리케이션이 할당한 메모리 공간을 주기적으로 검사하여 더 이상 사용되지 않는 메모리를 해제하는 기능을 말한다. - 매니지드 언어 - 메모리 누수 방지&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;5장-표현식과-문&quot;&gt;5장. 표현식과 문&lt;/h3&gt;
+
+&lt;p&gt;리터럴은 사람이 이해할 수 있는 문자 또는 약속된 기호를 사용해 값을 생성하는 표기법을 말한다.&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;크롬 개발자 도구에서 표현식이 아닌 문을 실행하면 언제나 undefined를 출력한다. - 완료값&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;크롬 개발자 도구에서 표현식인 문은 평가된 값을 반환한다.&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;6장-데이터-타입&quot;&gt;6장. 데이터 타입&lt;/h3&gt;
+
+&lt;p&gt;데이터 타입이 필요한 이유&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;값을 저장할 때 확보해야 하는 메모리 공간의 크기를 결정하기 위해서&lt;/li&gt;
+  &lt;li&gt;값을 참조할 때 한 번에 읽어들여야 할 메모리 공간의 크기를 결정하기 위해서&lt;/li&gt;
+  &lt;li&gt;메모리에서 읽어들인 2진수를 어떻게 해석할지 결정하기 위해서&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;자바스크립트의 변수는 선언이 아닌 할당에 의해 타입이 결정(타입 추론)된다. 
+그리고 재할당에 의해 변수의 타입은 언제든지 변할 수 있다. 
+이러한 특징을 동적 타이핑이라 한다.&lt;br /&gt;
+동적 타입 언어는 유연성은 높지만 신뢰성은 떨어진다.&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;7장-연산자&quot;&gt;7장. 연산자&lt;/h3&gt;
+
+&lt;p&gt;증가/감소(++/–) 연산자는 피연산자의 값을 변경하는 부수 효과가 있다.&lt;br /&gt;
+증가/감소(++/–) 연산자는 위치에 의미가 있다.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;피연산자 앞에 위치한 전위 증가/감소 연산자는 먼저 피연산자의 값을 증가/감소시킨 후, 다른 연산을 수행한다.&lt;/li&gt;
+  &lt;li&gt;피연산자 뒤에 위치한 후위 증가/감소 연산자는 먼저 다른 연산을 수행한 후, 피연산자의 값을 증가/감소시킨다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;숫자 타입이 아닌 피연산자에 + 단항 연산자를 사용하면 피연산자를 숫자 타입으로 변환하여 반환한다. 
+이때 피연산자를 변경하는 것은 아니고 숫자 타입으로 변환한 값을 생성해서 반환한다. 따라서 부수 효과는 없다.&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;암묵적 타입 변환 // 타입 강제 변환&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;NaN은 자신과 일치하지 않는 유일한 값이다. 따라서 숫자가 NaN인지 조사하려면 빌트인 함수 Number.isNaN을 사용한다.&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Object.is 메소드는 일치 비교 연산자(===)와 비슷하게 작동하며 NaN 두 개를 비교하면 true를 반환하고 +0과 -0을 비교하면 false를 반환하는 더 예측 가능한 결과를 반환한다.&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;드 모르간의 법칙&lt;br /&gt;
+논리 연산자로 구성된 복잡한 표현식은 가독성이 좋지 않아 한눈에 이해하기 어려울 때가 있다. 
+이러한 경우 드 모르간의 법칙을 활용하면 복잡한 표현식을 좀 더 가독성 좋은 표현식으로 변환할 수 있다.&lt;br /&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;!(x&lt;/td&gt;
+          &lt;td&gt; &lt;/td&gt;
+          &lt;td&gt;y) = (!x &amp;amp;&amp;amp; !y)&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;table&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;
+          &lt;td&gt;!(x &amp;amp;&amp;amp; y) = (!x&lt;/td&gt;
+          &lt;td&gt; &lt;/td&gt;
+          &lt;td&gt;!y)&lt;/td&gt;
+        &lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;typeof 연산자로 null 값을 연산해보면 “null”이 아닌 “object”를 반환한다는 데 주의하자. 
+이것은 자바스크립트의 첫 번째 버전의 버그다. 하지만 기존 코드에 영향을 줄 수 있기 때문에 아직까지 수정되지 못하고 있다. 
+또 하나 주의해야 할 것이 있다. 
+선언하지 않은 식별자를 typeof 연산자로 연산해 보면 ReferenceError가 발생하지 않고 undefined를 반환한다.&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;ES7에서 도입된 지수 연산자는 좌항의 피연산자를 밑으로, 우항의 피연산자를 지수로 거듭 제곱하여 숫자 값을 반환한다. 
+지수 연산자가 도입되기 이전에는 Math.pow 메서드를 사용했다. 
+음수를 거듭제곱의 밑으로 사용해 계산하려면 괄호로 묶어야 한다.&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;대부분의 연산자는 다른 코드에 영향을 주지 않는다. 
+하지만 일부 연산자는 다른 코드에 영향을 주는 부수 효과가 있다. 
+부수 효과가 있는 연산자는 할당 연산자(=), 증가/감소 연산자(++/–), delete 연산자다.&lt;br /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 24 Oct 2022 00:00:00 +0900</pubDate>
+      </item>
+    
+      <item>
+        <title>윤태연 복습일지(3)</title>
+        <link>/%EC%9C%A4%ED%83%9C%EC%97%B0/%EB%8F%85%EC%84%9C%EC%9D%BC%EC%A7%80/2022/10/23/repeating-ssr_vs_csr.html</link>
+        <guid isPermaLink="true">/%EC%9C%A4%ED%83%9C%EC%97%B0/%EB%8F%85%EC%84%9C%EC%9D%BC%EC%A7%80/2022/10/23/repeating-ssr_vs_csr.html</guid>
+        <description>&lt;h1 id=&quot;ssr-vs-csr-2022--10--24&quot;&gt;SSR vs CSR: 2022 / 10 / 24&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://user-images.githubusercontent.com/94962427/197333747-37c59586-8098-45df-9895-6a1ddeb64021.png&quot; alt=&quot;2022-10-23-repeating-ssr_vs_csr.md&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;정의&quot;&gt;정의&lt;/h2&gt;
+
+&lt;p&gt;SSR과 CSR은 렌더링이 어디에 일어나냐의 방식 차이로 SSR은 서버에서, CSR은 파일을 받아 클라이언트에서 렌더링된다.&lt;/p&gt;
+
+&lt;h2 id=&quot;특성-및-차이점&quot;&gt;특성 및 차이점&lt;/h2&gt;
+
+&lt;p&gt;SSR은 요청마다 로딩이 되는 특징이 있어 첫 요청에 관한 로딩은 빠르지만 요청(페이지 전환)마다 첫 요청이 해왔던 과정 그대로 반복해 렌더링하기에 1. 서버 부하가 커지고, 2. EX에 부정적 영향
+CSR은 첫 요청에만 전체 JS, HTML파일을 받아와 클라이언트에서 실행되기에 첫 로딩은 느리지만 1. 그 다음 요청들은 빨라 SSR과 반대로 로딩이 짧아 EX에 긍정적인 영향을 주지만 2. 파일의 규모가 클 경우 첫 로딩이 더욱 길어지고 3. 각 페이지 마다 meta 데이터가 없기에 SEO에 취약하다.&lt;/p&gt;
+
+&lt;p&gt;결론은 각 특징을 잘 알고 상황마다 렌더링 방식에 차이를 둬야할 것이다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;SSR을 써야할 경우: 서버가 안좋거나, 네트워크가 느리거나, 웹 앱의 상호작용이 비교적 적을 때, 메인 스크립트가 매우 클 때, SEO가 중요할 때&lt;/li&gt;
+  &lt;li&gt;CSR을 써야할 경우: SSR과 반대, 서버 좋, 넷월ㅋ 빠름, 상호작용이 많을 수록 CSR, 메인 스크립트가 작을 때, SEO 따위 필요 없을 때, 중간 요청의 파일 크기가 매우 클 때(로딩을 넣을 수 있어서)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;+ 추가로 요즘 검색 엔진 중에서도 JS을 읽어낼 수 있는 엔진도 존재해 CSR의 단점이 보완되고 있음&lt;/p&gt;
+</description>
+        <pubDate>Sun, 23 Oct 2022 00:00:00 +0900</pubDate>
+      </item>
+    
+      <item>
+        <title>김일태 독서일지 : 모던 자바스크립트 Deep Dive</title>
+        <link>/%EA%B9%80%EC%9D%BC%ED%83%9C/%EB%8F%85%EC%84%9C%EC%9D%BC%EC%A7%80/2022/10/23/Deep-Dive-Reading-IT.html</link>
+        <guid isPermaLink="true">/%EA%B9%80%EC%9D%BC%ED%83%9C/%EB%8F%85%EC%84%9C%EC%9D%BC%EC%A7%80/2022/10/23/Deep-Dive-Reading-IT.html</guid>
+        <description>&lt;h3 id=&quot;1장-프로그래밍&quot;&gt;1장. 프로그래밍&lt;/h3&gt;
+
+&lt;p&gt;프로그래밍은 요구사항의 집합을 분석해서 적절한 자료구조와 함수의 집합으로 변환한 후, 그 흐름을 제어하는 것&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2장-자바스크립트란&quot;&gt;2장. 자바스크립트란?&lt;/h3&gt;
+
+&lt;p&gt;렌더링이란 HTML, CSS, 자바스크립트로 작성된 문서를 해석해서 브라우저에 시각적으로 출력하는 것을 말함, 
+때로는 서버에서 데이터를 HTML로 변환해서 브라우저에게 전달하는 과정(SSR:Service Side Rendering)을 가리키도 함&lt;br /&gt;
+Ajax는 서버로부터 필요한 데이터만 전송받아 변경해야 하는 부분만 한정적으로 렌더링하는 방식을 가능하게 함&lt;br /&gt;
+jQuery의 등장으로 다소 번거롭고 논란이 있던 DOM을 더욱 쉽게 제어할 수 있게 되었고 크로스 브라우징 이슈도 어느 정도 해결됨&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;…..&lt;/p&gt;
+
+&lt;p&gt;…..&lt;/p&gt;
+
+&lt;h3 id=&quot;4장-변수&quot;&gt;4장. 변수&lt;/h3&gt;
+
+&lt;p&gt;자바스크립트는 개발자의 직접적인 메모리 제어를 허용하지 않는다.&lt;br /&gt;
+변수는 프로그래밍 언어에서 값을 저장하고 참조하는 메커니즘으로, 값의 위치를 가리키는 상징적인 이름이다.&lt;br /&gt;
+일반적으로 초기화란 변수가 선언된 이후 최초로 값을 할당하는 것을 말한다. 
+var 키워드로 선언한 변수는 undefined로 암묵적인 초기화가 자동 수행된다. 
+따라서 var 키워드로 선언한 변수는 어떠한 값도 할당하지 않아도 undefined라는 값을 갖는다.&lt;br /&gt;
+변순 선언이 소스코드 한 줄씩 순차적으로 실행되는 시점, 즉 런타임이 아니라 그 이전 단계에서 먼저 실행한다. 
+변수 선언문이 코드의 선두로 끌어 올려진 것처럼 동작하는 자바스크립트의 고유의 특징을 변수 호이스팅이라 한다. 
+변수 선언뿐 아니라 모든 식별자(변수, 함수, 클래스 등)는 호이스팅한다. 
+모든 선언문은 런타임 이전 단계에서 먼저 실행되기 때문이다.&lt;br /&gt;
+변수 선언은 소스코드가 순차적으로 실행되는 시점인 런타임 이전에 먼저 실행되지만 값의 할당은 소스코드가 순차적으로 실행되는 시점인 런타임에 실행된다.&lt;br /&gt;
+값을 재할당할 수 없어서 변수에 저장된 값을 변경할 수 없다면 변수가 아니라 상수라 한다.&lt;br /&gt;
+가비지 콜렉터는 애플리케이션이 할당한 메모리 공간을 주기적으로 검사하여 더 이상 사용되지 않는 메모리를 해제하는 기능을 말한다. - 매니지드 언어 - 메모리 누수 방지&lt;br /&gt;
+리터럴은 사람이 이해할 수 있는 문자 또는 약속된 기호를 사용해 값을 생성하는 표기법을 말한다.&lt;br /&gt;
+크롬 개발자 도구에서 표현식이 아닌 문을 실행하면 언제나 undefined를 출력한다. - 완료값&lt;br /&gt;
+크롬 개발자 도구에서 표현식인 문은 평가된 값을 반환한다.&lt;br /&gt;
+데이터 타입이 필요한 이유&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;값을 저장할 때 확보해야 하는 메모리 공간의 크기를 결정하기 위해서&lt;/li&gt;
+  &lt;li&gt;값을 참조할 때 한 번에 읽어들여야 할 메모리 공간의 크기를 결정하기 위해서&lt;/li&gt;
+  &lt;li&gt;메모리에서 읽어들인 2진수를 어떻게 해석할지 결정하기 위해서&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;자바스크립트의 변수는 선언이 아닌 할당에 의해 타입이 결정(타입 추론)된다. 
+그리고 재할당에 의해 변수의 타입은 언제든지 변할 수 있다. 
+이러한 특징을 동적 타이핑이라 한다.&lt;br /&gt;
+동적 타입 언어는 유연성은 높지만 신뢰성은 떨어진다.&lt;br /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Sun, 23 Oct 2022 00:00:00 +0900</pubDate>
+      </item>
+    
+      <item>
+        <title>이희진 복습일지</title>
+        <link>/%EC%9D%B4%ED%9D%AC%EC%A7%84/%EB%B3%B5%EC%8A%B5%EC%9D%BC%EC%A7%80/2022/10/22/repeating-HJ.html</link>
+        <guid isPermaLink="true">/%EC%9D%B4%ED%9D%AC%EC%A7%84/%EB%B3%B5%EC%8A%B5%EC%9D%BC%EC%A7%80/2022/10/22/repeating-HJ.html</guid>
+        <description>&lt;h3 id=&quot;221011--uri-vs-url&quot;&gt;221011 || URI vs URL&lt;/h3&gt;
+&lt;p&gt;URI는 URL를 포함하는 상위개념이라 하나 둘의 차이가 명확하게 와닿지는 않는다.&lt;br /&gt;
+이 둘의 명확한 구분을 위해 좀 더 상세히 살펴보면 다음과 같다.&lt;br /&gt;
+먼저 URI는 통합 자원 식별자(Uniform Resource Identifier)의 약자로 논리적 및 물리적 리소스를 식별하는 고유한 문자열 시퀸스다.&lt;br /&gt;
+그럼 URL은 무엇일까? 통합 자원 위치 탐사기(Uniform Resource Locator)로 네트워크 상에서 리소스가 어디에 있는지 알려주는 규약이다.&lt;br /&gt;
+요약하면 URI는 식별을 하고 URL는 위치까지 가르킨다. 그렇기 때문에 URI이더라도 위치 정보가 없다면 URL이 될 수 없으므로 ‘URL은 URI이다’는 성립이 되지만 ‘URI는 URL이다’는 성립이 되지 못한다.&lt;/p&gt;
+
+&lt;p&gt;즉, 한 가지 예를 들어 설명하면 다음과 같다.&lt;br /&gt;
+http://asterisk.com/user?id=123&lt;br /&gt;
+이 경우, ‘?id=123(query)’의 결과에 따라 특정 자원의 결과가 다르게 나올 수 있으므로 이를 식별자라 한다. 즉, 식별자 이전까지는 URL이라 할 수 있으나 식별자가 붙은 형태는 URL이라 할 수 없고 오로지 URI라고만 할 수 있다.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;221016--express-라이브러리&quot;&gt;221016 || express 라이브러리&lt;/h3&gt;
+&lt;p&gt;express.js로 서버를 여는 건 어쩌면 node.js보다 간단할 수 있다. 그럼 express 라이브러리 설치 후 실행을 시키는 건 어떤 과정을 거칠까.&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;express&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;express&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;express&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;listen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;port&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(){&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;실행할&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;코드&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;이게 하나의 기본 양식이다. 아래의 listen()을 통해 서버를 열 수 있는데 listen()에는 총 두 개의 인자가 들어간다. 하나는 서버를 띄울 포트, 하나는 서버를 열고 실행할 코드로 완성한다면 해당 포트로 접속했을 때 사용자가 마주할 페이지를 마음대로 설정할 수 있다. 또한 여기서 멈추지 않고 서버를 띄웠을 때 서버로 오는 다양한 요청들을 처리할 수 있어야 한다. 가장 보편적인 예로 사용자가 URL을 통해 GET 요청을 보냈을 때 요청에 맞춰 페이지 응답을 보낼 수 있어야 하는 것이다.&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;경로&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+   &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;send&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;전달인자로 받은 경로로 접속했을 때 실행할 코드);
+   }
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;만약 ‘/books’라는 경로에 도달했을 때 다양한 책의 목록이 나오는 페이지를 띄우고 싶다면 res.send()안에 원하는 페이지를 띄우는 코드를 작성하면 된다. 이것이 기본적인 express 라이브러리를 실행하는 틀이며 다양한 활용을 통해 동적인 페이지를 구성할 수 있다.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;221022--dom1&quot;&gt;221022 || DOM(1)&lt;/h3&gt;
+&lt;p&gt;DOM은 정확히 무엇일까? 브라우저 렌더링 엔진이 HTML 문서를 파싱(일련의 문자열을 token 단위로 분해해 parse tree을 생성)하여 만든 자료 구조를 DOM이라 한다. HTML 요소들(태그, 어트리뷰트 이름 및 값, 콘텐츠)은 파싱을 통해 요소 노드 객체(요소 노드, 어트리뷰트 노드, 텍스트 노드)로 변환된다.&lt;/p&gt;
+
+&lt;p&gt;HTML 요소 간에는 중첩 관계가 있기 때문에 이 사이엔 부모-자식 관계가 형성이 되고 이를 기반으로 비선형(하나의 자료 뒤에 여러 개의 자료가 존재함) 자료구조 중 하나인 트리 자료구조가 생성된다.&lt;/p&gt;
+
+&lt;p&gt;파싱을 통해 형성된 DOM의 노드 객체는 총 12개가 있으며 이 중 중요한 노드 타입은 총 4개 있다.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;문서 노드(Document node)&lt;br /&gt;
+DOM 트리의 최상위에 존재하는 루트 노드인 document 객체를 의미한다. window.document 또는 document로 참조 가능하며 이때 window 객체는 하나의 전역 객체라 모든 자바 스크립트 코드가 공유하고 window의 document 프로퍼티에 바인딩 되어 있는 하나의 document 객체를 보게 된다. 따라서, HTML 문서당 window 객체는 유일하다. 문서 노드는 앞서 말했듯 루트 노드이기 때문에 요소, 어트리뷰트, 텍스트 등 다른 노드에 접근하기 위해서는 문서 노드를 꼭 거쳐야 한다. 이러한 특징 때문에 문서 노드는 진입점 역할을 담당한다 할 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;요소 노드(Element node)&lt;br /&gt;
+HTML 요소를 가리키는 객체로 해당 노드는 다른 노드와 부모-자식 관계를 가질 수 있고 이 관계를 통해 구조(트리 구조)화가 가능하다. 이 때문에 요소 노드는 문서의 구조를 표현한다고 할 수 있다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;어트리뷰트 노드(attribute node)&lt;br /&gt;
+어트리뷰트 노드는 HTML 요소의 어트리뷰트를 가리키는 객체로 해당 노드에 접근하기 위해서는 요소 노드에 먼저 접근해야 한다. 이는 어트리뷰트 노드가 오로지 요소 노드에만 연결되어 있기 때문이다. 단, 여기서 주의해야 하는 것은 해당 연결은 상위로 연결된 게 아니라 동등한 위치에서 연결된 것으로 요소 노드와 어트리뷰트 노드의 관계는 부모-자식이라 할 수 없다.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;텍스트 노드(Text node)&lt;br /&gt;
+HTML 요소의 텍스트를 가리키는 객체로 요소 노드가 문서의 구조라면 텍스트 노드는 문서의 내용을 의미한다. 텍스트 노드는 요소 노드의 자식 노드로 접근하기 위해선 요소 노드에 먼저 접근해야 하며 텍스트 노드는 본인의 자식 노드를 가질 수 없는 리프 노드다. 즉, DOM 트리의 최종단이라 할 수 있다.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+</description>
+        <pubDate>Sat, 22 Oct 2022 00:00:00 +0900</pubDate>
+      </item>
+    
+      <item>
+        <title>이영우 독서일지(4)</title>
+        <link>/%EC%9D%B4%EC%98%81%EC%9A%B0/%EB%8F%85%EC%84%9C%EC%9D%BC%EC%A7%80/2022/10/22/reading(4)-YW.html</link>
+        <guid isPermaLink="true">/%EC%9D%B4%EC%98%81%EC%9A%B0/%EB%8F%85%EC%84%9C%EC%9D%BC%EC%A7%80/2022/10/22/reading(4)-YW.html</guid>
+        <description>&lt;p&gt;5일차 35p ~ 42p 
+이름은 어디에서나 쓰이기 때문에 잘 짓는것이 중요하다.
+에 대한 추가내용.
+함수에 대한 내용 시작.&lt;/p&gt;
+</description>
+        <pubDate>Sat, 22 Oct 2022 00:00:00 +0900</pubDate>
+      </item>
+    
+      <item>
+        <title>윤태연 독서일지: 오개안말(7)</title>
+        <link>/%EC%9C%A4%ED%83%9C%EC%97%B0/%EB%8F%85%EC%84%9C%EC%9D%BC%EC%A7%80/2022/10/22/%EC%98%A4%EA%B0%9C%EC%95%88%EB%A7%907.html</link>
+        <guid isPermaLink="true">/%EC%9C%A4%ED%83%9C%EC%97%B0/%EB%8F%85%EC%84%9C%EC%9D%BC%EC%A7%80/2022/10/22/%EC%98%A4%EA%B0%9C%EC%95%88%EB%A7%907.html</guid>
+        <description>&lt;p&gt;디자이너의 마인드셋: 2022 / 10 / 22&lt;/p&gt;
+
+&lt;h1 id=&quot;part3-디자이너의-일&quot;&gt;Part3. 디자이너의 일&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;1-디자이너의-마인드셋&quot;&gt;1. 디자이너의 마인드셋&lt;/h2&gt;
+
+&lt;p&gt;IT기업의 디자이너는 생각한대로 디자인하는 것이 아닌 기획의 의도나 목적을 중점으로 디자인해야한다. 예술이 아니라 주어진 목적을 조형적으로 실체화해야한다. 왜!? 미적 기준은 사람마다 달라 통일할 수 없으며 각 기능, 페이지의 목적마다 중점적으로 둬야하는 포인트가 다르기에 기획안을 기준으로 디자인해야한다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;웹/앱 디자인의 핵심: UI/UX - 사용자 중심의 경험이 중요하다!
+예: 하인즈 이전 케찹들은 뚜껑이 위로 가게 UI가 디자인 됐다. 하지만 UX적인 관점에서 케챱이 뚜껑과 반대로 있다면 케챱이 뚜껑에 뭉치는 등 별로였다. 하인즈 케찹은 UI를 뚜껑 아래로 가게 만들어 짜기 편하게(내용물 적어져도, 뚜껑 안굳음)만들어 UX를 향상시켰다!&lt;/li&gt;
+  &lt;li&gt;UI/UX 관련 개발 방법: 사용자 중심, 편한 지 안편한지
+    &lt;ul&gt;
+      &lt;li&gt;구글 애널리틱스 툴: 기획, 개발 등 대부분 도움되는 툴, 신규 방문, 재방문 등과 어느 페이지에서 이탈률이 높은지 분석해주는 툴, 이 걸 기준으로 디자인하면 좋음&lt;/li&gt;
+      &lt;li&gt;툴, 구조 등을 분석하는 것이 디자이너 하나만 하기엔 버거워서 협업 필요&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;디자이너로서 경쟁력 갖추기: 감각 늘려 트렌드 잡기, 개발 구조 이해
+    &lt;ul&gt;
+      &lt;li&gt;감각 늘리기, 트렌드 잡기: 다양한 레퍼런스 관찰(드리블, 핀터레스트, Muzli 등), 트렌디한 툴 사용(피그마, 스케치, 제플린 등)&lt;/li&gt;
+      &lt;li&gt;개발을 아는 디자이너는 치명적!: 기초 퍼블리싱 지식을 익혀둬 가능, 불가능 기능들을 디자인해 효율적인 디자인을 하자. 그 이상 개발을 하고싶고 한다면 프리랜서로 하는게 더 효율적&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        <pubDate>Sat, 22 Oct 2022 00:00:00 +0900</pubDate>
+      </item>
+    
+      <item>
+        <title>전예린 복습일지(3)</title>
+        <link>/%EC%A0%84%EC%98%88%EB%A6%B0/%EB%B3%B5%EC%8A%B5%EC%9D%BC%EC%A7%80/2022/10/21/reapeating(3)-YR.html</link>
+        <guid isPermaLink="true">/%EC%A0%84%EC%98%88%EB%A6%B0/%EB%B3%B5%EC%8A%B5%EC%9D%BC%EC%A7%80/2022/10/21/reapeating(3)-YR.html</guid>
+        <description>&lt;h3 id=&quot;221017--request-프로퍼티--reqbody--query--params의-차이&quot;&gt;221017 || request 프로퍼티 : req.body() / query() / params()의 차이&lt;/h3&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Express로 서버를 구현 할 때, request의 프로퍼티들을 사용하여 우리가 원하는 값을 불러온다.
+&lt;br /&gt;
+대표적인 request 프로퍼티인 req.body() / query() / params()의 차이점에 대해 알아보자.
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;req.params()&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;라우트 파라미터들을 포함한다.
+&lt;br /&gt;
+만약 요청온 url이 www.example.com/public/100/jun 이라면,&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;/:id/:name&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;params&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// { id: &apos;100&apos;, name: &apos;jun&apos; }&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;req.params 값은 { id: ‘100’, name: ‘jun’ } 이 된다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;req. query()&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;url 쿼리 파라미터들을 포함하며, 주로 GET 요청을 처리할 때 사용한다.
+&lt;br /&gt;
+만약 요청온 url이 www.example.com/public/100/jun?title=hello! 이라면,&lt;/p&gt;
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;get&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;/:id/:name&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;query&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// { title : &apos;hello!&apos; }&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;req.query 값은 { title : ‘hello!’ } 이 된다.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;req.body()&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;주로 POST/PUT 요청을 처리할 때, 유저 정보 등의 JSON 바디 데이터를 담을 때 사용한다.
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;클라이언트에서 다음과 같이 요청을 보내면,&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;await&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;axios&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;method&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;`www.example.com/post/1/jun`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// post 로 보낼 데이터&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;nomad&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;age&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;11&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;married&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;req.body는 { name: ‘nomad’, age: 11, married: true }가 된다.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;router&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;post&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;/:id/:name&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;res&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;next&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;// post 요청 시 담은 객체 부분이 담긴다.&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;console&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;log&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;req&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;body&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;// { name: &apos;nomad&apos;, age: 11, married: true }&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Fri, 21 Oct 2022 00:00:00 +0900</pubDate>
+      </item>
+    
+      <item>
+        <title>전예린 독서일지(3): 커리어 스킬</title>
+        <link>/%EC%A0%84%EC%98%88%EB%A6%B0/%EB%8F%85%EC%84%9C%EC%9D%BC%EC%A7%80/2022/10/20/reading(3)-YR.html</link>
+        <guid isPermaLink="true">/%EC%A0%84%EC%98%88%EB%A6%B0/%EB%8F%85%EC%84%9C%EC%9D%BC%EC%A7%80/2022/10/20/reading(3)-YR.html</guid>
+        <description>&lt;h3 id=&quot;221018-화요일-182p189p&quot;&gt;22.10.18 화요일 182p~189p&lt;/h3&gt;
+
+&lt;h4 id=&quot;이력서--직접-작성하는-방향&quot;&gt;이력서 || 직접 작성하는 방향&lt;/h4&gt;
+&lt;p&gt;이력서의 초점을 자신이 무엇을 원하느냐가 아니라 자신이 어떤 가치를 제공하느냐에 맞춰라. 이력서에 그 일자리를 얻었을 때 무슨 일을 하고 싶은지, 자신이 얼마나 훌륭한 사람인지 자랑할 필요가 없다.
+현재 가지고 있는 기술과 과거에 쌓은 업적을 기반으로 자신이 장래의 고용주에게 어떠한 가치를 제공할 수 있는지 보여주어야 한다.
+각 회사에 맞게 이력서를 수정하여 그 회사에 맞는 특별한 가치를 제공할 능력을 보여주자.
+&lt;br /&gt;
+자신이 한 일을 적을 때는 다음 세 가지 정보를 넣어서 구체적으로 써라.&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;자신이 한 업무&lt;/li&gt;
+  &lt;li&gt;그 업무를 수행한 방법&lt;/li&gt;
+  &lt;li&gt;자신이 얻은 결과&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이력서는 1페이지로 작성하라. 어떤 소프트웨어 개발자이고 어떤 관련 경력과 기술을 갖추고 있는지 핵심 정보를 빠르게 알아볼 수 있게 하라.
+&lt;br /&gt;
+이력서 교정은 최소 5번 이상 봐야 한다. 이력서에 남아 있는 오타나 문법 오류, 맞춤법 오류는 이력서의 주인공이 멍청하고 부주의하고 세부적인 것까지 관심을 기울이지 않는다고 광고하는 최고의 방법이다. 특히 맞춤법 오류가 그렇다.
+&lt;br /&gt;
+여러 종류의 일자리에 지원하려면 이력서의 기본 버전 또한 여러 종류로 만들어야 한다. 
+&lt;br /&gt;
+이력서를 창의적이고 독특하게 하되, 주의를 분산시켜 메세지를 약화하지 말고, 메세지를 강화하는 쪽으로 사용하라.
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;221019-수요일-190p196p&quot;&gt;22.10.19 수요일 190p~196p&lt;/h3&gt;
+
+&lt;h4 id=&quot;면접-절차--면접-유형&quot;&gt;면접 절차 || 면접 유형&lt;/h4&gt;
+
+&lt;p&gt;표준 기술 면접)&lt;br /&gt;
+면접을 어떻게 보아야 할지 모르는 개발자가 면접을 맡는 일이 흔하다. 면접관은 아마 지원자가 쓸 핵심 기술이나 프로그래밍 언어에 관한 면접용 질문을 구글에서 검색해보고 들어올 것이다.
+지원자도 똑같은 방법으로 면접을 준비하면 된다. 면접에 들어가기 전에 자신이 선택한 기술에 관한 면접 질문과 답을 구글에서 검색해 알아두자. 
+&lt;br /&gt;
+인성 면접)&lt;br /&gt;
+이 유형의 면접은 보통 관리자가 본다. 작은 회사라면 CEO나 회사 창업자가 보기도 한다. 최대한 자연스럽게 행동하고 반사회적인 행동은 삼가라.
+&lt;br /&gt;
+패널 면접)&lt;br /&gt;
+패널 면접은 일렬로 앉은 여러 패널을 상대로 보는 면접이다. 기술 관련 질문과 사적인 질문을 던지고 지원자의 답변을 자세히 받아 적는다. 패널 면접은 모든 면접의 마지막이자 최종 관문인 경우가 많으므로 잘 준비하는게 좋다.
+&lt;br /&gt;
+코딩 면접)&lt;br /&gt;
+이 유형의 문제 해결을 위해 아예 새로운 사고방식이나 접근법을 익혀두어야 한다. 문제를 수도 코드로 나누고 이를 다시 IDE로 옮겨서 최종 해결책을 구현해라. 연습하고 연습하는게 답이다.&lt;/p&gt;
+
+&lt;h3 id=&quot;221020-목요일-197p206p&quot;&gt;22.10.20 목요일 197p~206p&lt;/h3&gt;
+
+&lt;h4 id=&quot;면접-절차--면접을-대비해-알아두어야-할-것&quot;&gt;면접 절차 || 면접을 대비해 알아두어야 할 것&lt;/h4&gt;
+
+&lt;p&gt;코딩 문제 푸는 법)&lt;br /&gt;
+코딩 면접을 잘 통과하는 방법에 대해 쓴 블로그 포스트나 구직 면접 준비하기를 주제로 한 플루럴 사이트 강의를 참고해도 좋다. 알고리즘 문제를 분해해서 해결하는 방법을 단계별로 보여주는 강의다.
+&lt;br /&gt;
+기술에 대한 일반적인 질문)&lt;br /&gt;
+자신의 전문 분야는 제대로 알아야 한다. 적어도 구글에서 ‘자신이 선택한 기술 + 면접 질문’을 검색해 나온 상위 세 가지 검색 결과에 해당하는 모든 질문에 대답할 수 있도록 준비해라.&lt;br /&gt;
+예를 들어, 객체지향적인 프로그래밍 언어와 관련된 면접에 들어간다면 적어도 캡슐화, 상속, 다형성, 데이터 추상화, 인터페이스, 추상 기본 클래스에 대해서는 알아야 한다.
+&lt;br /&gt;
+성격에 관한 질문과 심리학적 질문)&lt;br /&gt;
+일반적인 성격 관련 질문이나 심리 관련 질문에 답할 수 있게 준비를 해두자. 세부적인 약점을 너무 많이 노출하지 않는 선에서 최대한 진실되게 답하되 긍적적인 태도를 견지하라.
+책임감 있는 모습, 성장하는 모습을 보여라. 어떤 상황에서도 남을 탓하지 마라. &lt;h&gt;약점의 긍정적인 면을 찾아내서 강조한 후 가볍게 약점을 언급하며 마쳐라. 어떻게 약점을 강점으로 승화시킬 수 있는지 보여줘라.&lt;h&gt;&lt;/h&gt;&lt;/h&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;면접-팁&quot;&gt;면접 팁&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;면접을 보러 갈 때는 그 회사의 표준 복식 규정보다 두 단계 높은 의상을 선택하라.&lt;/li&gt;
+  &lt;li&gt;정시 지키기. 30분 전에 도착하라.&lt;/li&gt;
+  &lt;li&gt;거짓말하지 마라. 기술 관련 질문에서 답을 모르면 모른다고 얘기하고 집에 가서라도 찾아보겠다고 말하라. 
+면접관이 던진 질문의 답을 반드시 전부 알아야 하는 건 아니다. 
+자신의 지식에 부족한 부분이 있다는 사실을 솔직하고 겸손하게 인정하고 결점을 채우기 위해 노력하는 모습을 보이는 게 대충 둘러대고 거짓말 하는 것보다 훨씬 더 좋은 인상을 남긴다.
+답을 모른다고 인정할 질문이 하나 정도 있는 건 오히려 도움이 될 때도 있다&lt;/li&gt;
+  &lt;li&gt;방어적인 태도를 취하지 마라. 면접 중에 공격을 받는다고 느껴도 그 상황을 견뎌라. 자신이 자신감을 가질 만한 실력을 갖추었다고 믿어라.&lt;/li&gt;
+  &lt;li&gt;자세히 말해라. 한 단어나 한 문장으로 답하지 마라. 항상 정성 들여 답하라.&lt;/li&gt;
+  &lt;li&gt;자신감을 가져라. 면접을 철저히 준비할수록 자신감이 생긴다. 어려운 부분을 잘 대비해라.&lt;/li&gt;
+  &lt;li&gt;자신이 면접에서 하는 모든 말에 이 메세지를 담아라. 이게 가장 중요한 특성이니 이를 가능한 많은 방법으로 증명할 방법을 찾아라. 기회가 된다면 말로도 꼭 해라.
+    &lt;blockquote&gt;
+      &lt;p&gt;저는 능동적인 사람입니다. 해야 할 일이 무엇인지 스스로 파악하고 실행합니다.&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;연습에 도움이 되는 일이라면 무엇이든 해라. 자신의 모습을 동영상으로 찍어보라.&lt;/li&gt;
+&lt;/ol&gt;
+</description>
+        <pubDate>Thu, 20 Oct 2022 00:00:00 +0900</pubDate>
+      </item>
+    
+      <item>
+        <title>이유정 독서일지(2장): 전자 회로의 조합 논리</title>
+        <link>/%EC%9D%B4%EC%9C%A0%EC%A0%95/%EB%8F%85%EC%84%9C%EC%9D%BC%EC%A7%80/2022/10/19/reading(2)-YJ.html</link>
+        <guid isPermaLink="true">/%EC%9D%B4%EC%9C%A0%EC%A0%95/%EB%8F%85%EC%84%9C%EC%9D%BC%EC%A7%80/2022/10/19/reading(2)-YJ.html</guid>
+        <description>&lt;p&gt;20221019 수요일 p.91 ~ p.96 반
+이번 장에서는 전기 분야의 혁신을 이끌어낸 변화에 대해 말해보자 . 비트를 사용하지 않는 초기 계산 장치를 살펴봄으로써 왜 비트가 오늘날 사용하는 기술에 어울리는 올바른 선택인지 배운다. 비트를 만들기 위해 무엇이 필요할까 릴레이나 진공관 같은 더 오래되고 단순한 기술을 살펴보고, 이런 기술을 전기와 집적 회로를 사용하는 하드웨어를 통한 현대적인 비트 구현과 비교해보자 
+/비트에 대해 동작하는 장치를 포함해 모든 물리적인 장치를 하드웨어라고 부른다. 우리는 조합 논리를 구현하는 하드웨어에 대해 살펴볼 것이다. 조합논리는 불리언 대수의 또 다른 이름이다. 
+/디지털 컴퓨터의 사례 : 톱니바퀴의 톱니 비율이 상대적인 회전 속도를 결정하기 때문에 곱셈, 나눗셈, 기타 계산에 톱니바퀴가 유용하다. 안티키테라 기계는 사용자가 다이얼을 돌려서 날짜를 이비력하고 크랭크를 돌려서 천문학 계산을 수행한다. 또, 화기 제어 컴퓨터는 톱니바퀴를 이용해 삼각함수와 미적분을 계산한 예술품이다 ㅋㅋ! 
+/ 톱니바퀴를 사용하지 않는 기계식 컴퓨터로는 계산자가 있다. 로그를 영리하게 응용한 도구다. 일상적으로 큰 수를 곱해야 하는 중세 천문학자나 엔지니어에게 엄청난 도구였다. 계산자는 대량 생산된 계산 장치로 여겨지며, 비행 컴퓨터라고 부르는 동그란 꼐산자를 비상용 항법 계산 도구로 사용한다. 
+/ 역사적으로 계수가 계산 장치를 활용하는 주된 용도였다. 손가락이 열개밖에 없기 때문에 탤리 막대를 사용했었다. 
+/ 복잡한 10진 기계식 계산기 개발 비용인 차분 기관은 부품의 정밀도가 배비지 시대의 금속 가공 기술로는 달성할 수 없었다. 하지만 간단한 기계적 10진수 계산기는 차분 기관 같은 복잡한 금속 기술이 필요하지 않았기 때문에 1600년대에 만들어졌고, 여러 다른 모델이 대량 생산됐고 후기 모델은 손으로 돌리는 핸들을 전동 모터로 바꿨다. 
+/ 아날로그와 디지털 차이! : 계산자는 연속적이고 손가락은 이산적이다. 연속적이라는 말은 실수를 표현할 수 있다는 뜻이고, 
+이산적이라는 말은 정수만 표현할 수 있다. 전자기술에 대해 이야기 할 때 아날로그는 연속적인 것을 뜻하고, 디지털은 이산적인 것을 
+뜻한다. 손가락이 라틴어로 digitus 다. 한편, 실수를 표현할 수 있기 때문에 아날로그가 계산에는 더 적합한 것 같지만 정밀도의
+문제가 있다. 이를 해결하기 위해 자를 더 크게 만들 수 잇으나, 큰 물건을 움직이는 데 엄청난 에너지가 필요하고, 우리는 작고 빠르면서전력 소모가 적은 컴퓨터를 원한다. 
+/ 하드웨어에서 크기가 중요한 이유 : 현대 컴퓨터는 전자를 움직인다. 전기는 빛의 속도로 움직이며 빛의 속도는 초당 3억 미터다. 이런 물리적인 한계를 뛰어넘는 방법을 아직 발견하지 못했기 때문에 부품을 가능한 한 가깝게 위치시킨다. 40억 분의 1초 동안 이동할 수 있는 거리는 75 밀리미터 뿐이다. 전형적인 cpu는 한 면 이 18밀리미터다. 40억분의 1초는 전자가 이 cpu 안을 겨우 두번 왕복할 수 있는 정도의 시간이다. 컴퓨터에서 모든 것을 작게 만들면 더 높은 성능을 달성할 수 있겠죠? 거리가 줄어들면 써야할 에너지가 줄어들며 이는 저 전력 소모와 열 발생 감소로 이어진다. 하지만 하드웨어를 작게 만들다 보니, 여러 가지 문제가 생겼다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;2022-10-20 목요일 p.96반 ~ 100 반&lt;/p&gt;
+&lt;h2 id=&quot;디지털을-사용하면-더-안정적인-장치를-만들-수-있다&quot;&gt;디지털을 사용하면 더 안정적인 장치를 만들 수 있다&lt;/h2&gt;
+&lt;p&gt;하드웨어를 작게 만들면 속도와 효율은 좋아지지만, 물체가 너무 작아지면 서로 간섭하기 쉬워진다. 예를들어 계량컵이 너무 작으면 원자의 운동으로 컵이 흔들린다. 계량컵과 계산자는 모두 아날로그 장치로, 정확하게 값을 읽으려면 흔들림이 없어야 한다. 하지만 손가락이나 탤리 막대, 기계식 계산기 같은 디티털, 이산적인 장치에 영향을 끼치기는 어렵다. 왜냐하면 이산적인 장치는 판정 기준이 있기 때문이다. 결과적으로 판정 기준을 도입하면 값 중에 어떤 범위의 값을 표현할 수 있는 가능성이 사라진다. 현대 cpu에서 신호 간섭은 마치 도로에서 마주 보는 두 차가 서로 스쳐 지나갈 때 느껴지는 바람과 같다. 이런 누화 효과를 방지할 적절한 방법이 없기 때문에 더 높은 판정 기준을 통해 잡음 내성을 갖는 디지털 회로를 사용하는 것이 필수적이다. 판정 기준이라는 장애물을 뛰어넘기 위해서는 추가로 에너지가 필요하기 때문에 연속적인 장치를 사용할 때는 얻을 수 없는 일정 수준의 잡음 내성을 얻을 수 있다. 실제로 판정 기준을 도입해 생기는 안정성이 우리가 디지털 컴퓨터를 만드는 주된 이유다.&lt;/p&gt;
+&lt;h2 id=&quot;아날로그-세계에서-디지털-만들기&quot;&gt;아날로그 세계에서 디지털 만들기&lt;/h2&gt;
+&lt;p&gt;자연적으로 발생하는 전이 함수에 대해 설명해볼게요. 전이함수의 x축은 들어오는 빛의 양을 뜻하며 y축은 기록되는 밝기나 센서가 기록하는 빛을 의미한다. 빛의 값이 다르면 전이 함수가 기록하는 빛의 값도 달라진다. 전이함수는 곡선인것에 집중하자. 빛이 곡선의 상단부에 많이 닿으면 밝기 값이 서로 모이면서 이미지 노출이 과해지고 , 하단부에 많이 닿으면 이미지 노출이 부족해진다. 카메라 경우, 노출을 조절해서 빛이 직선부에 많이 닿게 만드는 것이다. 전이함수를 이용해 빛이 선형 영역에 닿게 하기 위해 ㅅ카메라의 셔터 속도나 조리개를 조절하는 장치도 만들었고, 증폭 회로도 전이함수를 이용했다. 볼륨은 게인이나 곡선이 가파른 정도를 조절한다. 게인이 높으면 곡선이 가팔라지고 출력도 커진다. 만약 게인이 11이라면? 왜곡이 발생하고 소리가 이상해진다. 입력이 조금만 변해도 곡선의 가파른 부분 때문에 출력이 확 달라진다. 이때 판정 기준을 문턱값이라고 한다. 출력값이 문턱값의 한쪽에서 반대쪽으로 옮겨가고 중간 정도의 출력값이 나오기는 어렵기 때문에 이런 왜곡이 유용하다. 이 현상은 연속적인 공간을 이산적인 영역으로 나눠준다. 즉, 아날로그는 가능한 한 선형 영역을 크케 만들고, 디지털은 직선부를 가능하면 작게 만드는 것이라고 할 수 있다.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;2022-10-23 일요일 p.100 반 ~p. 105 반&lt;/p&gt;
+&lt;h2 id=&quot;10진-숫자-대신-비트를-사용하는-이유&quot;&gt;10진 숫자 대신 비트를 사용하는 이유&lt;/h2&gt;
+&lt;p&gt;한 손가락이 한 숫자를 표현하기 때문에 효율적이지 않다. 손가락 대신 비트를 사용하면 100배 더 효율이 좋아진다. 또, 숫자를 이용하면 전이 함수를 각기 다른 10가지 문턱값으로 구분할 수 있는 간단한 방법이 없기 때문이다. 만들더라고 복잡하고 비용이 많이 든다. 즉, 10진 숫자 하나보다는 10비트를 사용하는게 훨 좋다. 이것이 현대적 하드웨어가 작동하는 방식이다. 우리는 전이 함수의 하단부와 상단부 영역을 활용하며, 하단부 영역을 차단, 상단부 영역을 포화라고 한다. 비트를 사용하면 재량권이 아주 커진다. 전이 함수가 아주 가파르기 때문에 출력이 한 값에서 다른 값으로 아주 급하게 바뀐다.&lt;/p&gt;
+&lt;h1 id=&quot;간단한-전기-이론-가이드&quot;&gt;간단한 전기 이론 가이드&lt;/h1&gt;
+&lt;p&gt;현대 컴퓨터는 전기를 조작해 작동된다. 전기를 사용해 컴퓨터를 만들면 더 빠르고 쉽게 만들 수 있다. 컴퓨터 하드웨어에서 전기를 사용하는 방법을 이해하도록 돕겠다.&lt;/p&gt;
+&lt;h2 id=&quot;전기는-수도-배관과-비슷하다&quot;&gt;전기는 수도 배관과 비슷하다.&lt;/h2&gt;
+&lt;p&gt;전기를 물이라고 생각해보자. 물이 물탱크에서 나오는 것처럼 전기는 배터리 같은 에너지 근원에서 나온다. 우리가 사용할 수 잇는 유일한 큰 에너지 근원은 태양뿐이다. 태양에서 온 에너지가 물을 기화시켜 수증기로 만들고, 수증기는 다시 물이 되어 물탱크를 채운다. 우리는 0이 밸브가 닫힌 상태를, 1이 밸브가 열린 상태를 표현한다고 가정한다. 직렬연결은 AND 연산을 구현하고, 병렬 연결은 OR 연산을 구현한다. 물이 파이프로 흘러서 전달되는 데 시간이 걸리는 것처럼, 전기가 컴퓨터 칩 내부에서 전파되는 데도 시간이 걸린다. 물 온도가 따뜻해지기 까지 시간이 걸리는 것처럼 전파지연도 있다. 이런 지연은 상수가 아니다. 물의 경우 온도 변화가 파이프를 확장시키거나 수축시키기 때문에 물의 흐름이 달라지며 그에 따라 지연 시간도 달라진다. 물이 파이프를 흘러가는 것처럼 전기도 선을 통해 이동한다. 다만ㅇ 이런 전기의 이동은 실제로는 전자의 흐름은 아니고 전자기 에너지 반응이 전파되는 현상을 전기라고 불렀다. 내부에 있는 금속을 도체라고 부르고 금속 바깥쪽을 둘러싼 부분을 부도체라고 부른다. 도체는 파이프 내부, 부도체는 파이프 자체라고 할 수 있다. 전기의 흐름을 제어할 수 있는 밸브를 스위치라고 부른다. 물은 압력에 의해 밀려서 움직인다. 압력의 세기는 달라질 수 있다. 전기에서 수압에 해당하는 존재는 전압이며 측정 단위는 볼트다. 전기 흐름의 양은 전류고 측정 단위는 암페어다. 관이 더 가늘수록 관을 통해 흐를 수 있는 물의 양을 제한하는 저항이 더 커진다. 전압이 더 높더라도 너무 가는 도체를 사용함으로 인해 저항이 아주 크면 전류가 커지지 못한다. 저항을 측정할 때는 옴을 쓴다. 이 세가지 변수 전압, 전류, 저항은 옴의 법칙을 통해 전류는 전압을 저항으로 나눈 값과 같다. 저항이 크면 전류가 더 줄어든다. 게다가 저항은 전기를 열로 바꾼다. 이 원리를 이용해 토스터부터 전기담요까지 모든 전열기구가 작동한다.&lt;/p&gt;
+
+&lt;h1 id=&quot;복습일지&quot;&gt;복습일지&lt;/h1&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;root&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getElementById&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;createTreeView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;menu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;currentNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;menu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;map&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;el&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;liElement&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;li&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;currentNode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;liElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;el&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+      &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;inputElement&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;inputElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setAttribute&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;checkbox&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;liElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;inputElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;spanElement&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;span&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;spanElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;textContent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;el&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;liElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;spanElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;kd&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ulElement&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;document&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;ul&lt;/span&gt;&lt;span class=&quot;dl&quot;&gt;&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;liElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;ulElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;createTreeView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;el&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ulElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+     &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;el&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;children&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
+        &lt;span class=&quot;nx&quot;&gt;liElement&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;textContent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;el&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;name&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;createTreeView&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;menu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;root&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Wed, 19 Oct 2022 00:00:00 +0900</pubDate>
+      </item>
+    
+      <item>
+        <title>윤태연 독서일지: 오개안말(6)</title>
+        <link>/%EC%9C%A4%ED%83%9C%EC%97%B0/%EB%8F%85%EC%84%9C%EC%9D%BC%EC%A7%80/2022/10/19/%EC%98%A4%EA%B0%9C%EC%95%88%EB%A7%906.html</link>
+        <guid isPermaLink="true">/%EC%9C%A4%ED%83%9C%EC%97%B0/%EB%8F%85%EC%84%9C%EC%9D%BC%EC%A7%80/2022/10/19/%EC%98%A4%EA%B0%9C%EC%95%88%EB%A7%906.html</guid>
+        <description>&lt;p&gt;협업을 돕는 화면 설계서: 2022 / 10 / 19&lt;/p&gt;
+
+&lt;h1 id=&quot;part2-기획자의-일&quot;&gt;Part2. 기획자의 일&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;3-협업을-돕는-화면-설계서&quot;&gt;3. 협업을 돕는 화면 설계서&lt;/h2&gt;
+
+&lt;p&gt;협업에 뭐가 중요한지 알았다. 본격적으로 기획자에게 정말 중요한 화면 설계서가 협업에 중요한 이유, 쓰는 방법 등에 대해 고찰해보자!&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;설계서를 작성하는 이유: 설계서 중심으로 모든 협업이 가능하게
+    &lt;ul&gt;
+      &lt;li&gt;개발 요청서 뿐만 아니라 이슈가 생길 시의 상황도 담겨져 있어야 설계서 중심 협업이 가능, 히스토리 등을 정리하여 설계서 중심으로 소통이 가능하게&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;목적을 명확하게 전달: 설계서 작성 중 기획의 의도가 제대로 전달돼야함, 그래야 구체적인 방안을 같이 모색하는 등 수월한 협업 가능&lt;/li&gt;
+  &lt;li&gt;설계서 타이틀: 리뷰 회의 이전 다른 포지션이 설계서를 안봤을 확률도 높고, 빠른 소통을 위해 타이틀을 함축적이지만 자세하게 작성
+    &lt;ul&gt;
+      &lt;li&gt;제목만 있으면 방향이 뒤틀릴 수도 그래서 추가해야함: 1. 작성 날짜 2. 플랫폼 3. 기능 상세 명칭 및 기획방향(신규/개션 등) 4. 문서 버전&lt;/li&gt;
+      &lt;li&gt;문서제목: 상품 검색 기획 설계서 =&amp;gt; 문서제목(신규): 2022/10/31_A몰_상품 검색 신규 기획 설계서_v1.0 ~~ 문서제목(고도화): 2022/10/31_A몰_상품 검색 고도화 기획(고급 옵션) 설계서_v1.0&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;설계서 속 스토리텔링: 설계서에서 탄탄하게 구성되면 설득력 업
+    &lt;ul&gt;
+      &lt;li&gt;타이틀(기능 소개), 목차, 버전 이력 관리(히스토리 공유), 설계목적 및 기대효과(기획배경 및 목적 공유), 정책 및 프로세스 정의(범위 공유), UI 설계 방향&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;리뷰 요청 방법: 리뷰 회의 전 회의 참석자들에게 공유하는데 지키면 좋을 예의들, 기획 의도를 제대로 전달 위함
+    &lt;ul&gt;
+      &lt;li&gt;‘설계서 작성하는데 미리 고려해야할 부분이 있을까요?’ 같은 말로 미리 언질&lt;/li&gt;
+      &lt;li&gt;그 후 리뷰 회의 건 설계서 발송하는 데 있어 간 회의 일정 및 기획 배경, 세부 내용 등을 메일 내용에 포함시켜 발송하기&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;이런 식으로 설계서를 작성하면 협업에 한층 수월해질 것이다. 부탁의 자세를 가지되 자신을 낮추는 것만이 아닌 자신의 과정을 공유하는 것만으로도 도움이 될 것이다.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 19 Oct 2022 00:00:00 +0900</pubDate>
+      </item>
+    
+      <item>
+        <title>이희진 독서일지(1): 한 권으로 읽는 컴퓨터 구조와 프로그래밍</title>
+        <link>/%EC%9D%B4%ED%9D%AC%EC%A7%84/%EB%8F%85%EC%84%9C%EC%9D%BC%EC%A7%80/2022/10/18/reading-HJ.html</link>
+        <guid isPermaLink="true">/%EC%9D%B4%ED%9D%AC%EC%A7%84/%EB%8F%85%EC%84%9C%EC%9D%BC%EC%A7%80/2022/10/18/reading-HJ.html</guid>
+        <description>&lt;h3 id=&quot;2210011일차-34p--49p&quot;&gt;221001(1일차) 34p ~ 49p&lt;/h3&gt;
+&lt;p&gt;프로그래밍 언어는 결국 사람이 만들었기 때문에 불완전성(버그)이 존재한다. 이에 대처하기 위함도 있으나 기본적으로 좋은 프로그래밍은 컴퓨터에게 효율적이고 정확하게 명령하는 것이므로 컴퓨터를 이해하는 건 좋은 기반이 된다. 하지만 메모리 관리가 필수였던 C 언어와 달리 메모리 걱정을 하지 않아도 된 자바를 비롯해 비슷한 언어들이 대거 등장하게 된 것은 분명한 발전이나 컴퓨터에 대한 이해를 불필요하게 여겨 프로그래머의 역량을 낮추는 계기가 되었으므로 이에 대한 역량 향상은 필수적이다.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2210032일차-51p--57p&quot;&gt;221003(2일차) 51p ~ 57p&lt;/h3&gt;
+&lt;p&gt;컴퓨터 언어는 자연어(인간의 언어)와 유사하다. 둘은 기호(문자)가 들어갈 상자, 상자에 들어갈 기호, 상자의 순서로 나눌 수 있는데 컴퓨터 언어에서 이 상자를 비트(2진법 사용을 뜻하는 binary와 숫자를 뜻하는 digit의 합성어)라고 칭한다. 비트 사용법 중 하나로 논리 연산이 있는데 대표적인 게 불리언 대수로, 기본적인 연산자로 NOT, AND, OR, XOR(첫 번째 비트와 두 번째 비트가 서로 다른 값이어야 참)이 있다. 드모르간 법칙(! false === true)을 바탕으로 AND 연산자로 OR을 나타낼 수 있으나 연산자의 사용은 적을수록 효율적이다.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2210043일차-58p--67p&quot;&gt;221004(3일차) 58p ~ 67p&lt;/h3&gt;
+&lt;p&gt;비트는 2진수로 숫자를 표현할 수 있다. 2의 거듭제곱 단위로 나눈 상자에 나누어 0과 1을 담아 숫자를 표현하며 이때 0과 1의 개수에 따라 비트의 수가 결정된다(e.g. 5,028는 13비트). 가장 오른쪽의(수를 가장 작게 변화시키는 유효) 비트를 LSB, 가장 왼쪽의(가장 크게 변화시키는 유효) 비트를 MSB라 한다. 2진수 또한 덧셈과 뺄셈이 가능하며 비트로 음수를 표현할 땐 ‘2의 보수’를 사용한다. 이때 ‘2의 보수’란 양수 2진수에 NOT 연산자를 추가한(0과 1을 반대로 한) 후 1을 더하는 방식을 뜻한다(e.g. 1 = 001 / -1 = 111).&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2210064일차-68p--73p&quot;&gt;221006(4일차) 68p ~ 73p&lt;/h3&gt;
+&lt;p&gt;앞서 말한 숫자 표현은 정수에 한정됐으나 비트로 실수 표현 또한 가능하다. 고정소수점(2의 거듭제곱을 분모로 하는 분수들을 이용해 2진법으로 소수 표현), 부동소수점 표현법 등 다양하게 있으나 해당 방법들의 비효율성(비트의 낭비)을 해결하기 위해 등장한 것이 ‘IEEE 부동소수점 수 표준’이다. 0.0012를 1.2(가수) x 10(밑)⁻³(지수)로 표현하는 것처럼 밑 2의 지수만 변경해 표현하는 부동소수점에 트릭을 사용해 정밀도를 높인 버전(1. 정규화(가수를 조정해 맨 앞에 0이 없게 만듦), 2. 맨 왼쪽 비트의 1을 생략함)으로 기본 정밀도 부동소수점과 2배 정밀도 부동소수점이 자주 쓰인다.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2210075일차-74p--78p&quot;&gt;221007(5일차) 74p ~ 78p&lt;/h3&gt;
+&lt;p&gt;2진수의 조작에 있어 불편함을 최소화시키기 위해 사람들은 다양한 표현법을 강구했다. 8진 표현법과 16진 표현법이 그것인데 각각 2진수 비트들을 3개씩, 4개씩 묶어 표현한다. 즉, 11010011111111000001 같은 엄청난 숫자를 4개씩 묶어 (1101/0011/1111/1100/0001) 표현하고 이를 각 진수 표현법의 규칙에 맞춰 변환하면 10몇개의 숫자들이 한 자릿수의 숫자 및 문자로 정리가 된다(예: 1101/0011/1111/1100/0001 =&amp;gt; d3fc1). 그렇다면 이런 다양한 표기법을 컴퓨터는 어떻게 구분할까. 구분할 수 있다. 0부터 시작하면 8진수, 1~9 사이의 숫자로 시작하면 10진수, 0x가 앞에 붙으면 16진수다. 이러한 진수 표현에 있어 절대 빠질 수 없는 비트들은 너무 작기 때문에 효율적인 표현을 위해 일정 개수(4, 8, 16 등)로 묶은 덩어리에 이름을 붙여 표현한다(니블, 바이트, 하프워드 등).&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2210126일차-79p--89p&quot;&gt;221012(6일차) 79p ~ 89p&lt;/h3&gt;
+&lt;p&gt;비트로 수를 표현할 수 있다. 그리고 이 수로 문자를 표현할 수 있다. 아스키 코드는 그 방법 중 하나로 키보드 위 모든 기호에 대해 7비트 수 값을 할당했다. (예: 65는 대문자 A를 뜻함) 키보드 위 문자 외에도 아스키 코드로 아스키 제어 문자 또한 나타낼 수 있다(예: 텍스트 시작, null 등). 또한 영어만 지원했던 기존과 달리 다양한 언어의 표준(유니코드)도 도입하여 문자에 16비트 코드를 부여한다. 하지만 아무리 비트가 저렴해졌다고 해도(이 때문에 기존 7비트에서 16비트까지 증가) 문자 표현에 있어서 8비트면 충분하기 때문에 ‘유니코드 변환 형식 8비트(UTF-8)’를 아스키가 아닌 문자에 대한 주된 인코딩(다른 비트 패턴 표현을 위해 사용한 비트 패턴) 방법으로 사용할 수 있다. 인코딩의 방식은 다양하고 그 예로 QP(쿼티드 프린터블)인코딩, 베이스64 인코딩, URL 인코딩이 있으며 해당 인코딩들은 기본적으로 문자 8비트 데이터를 송수신 가능한 비트로 쪼개어 인코딩한다. 마지막으로, 수로 색 또한 표현할 수 있다. 컴퓨터는 가산 색 시스템을 바탕으로 한 RGB 모델을 통해 색을 표현한다. RGB은 적, 녹, 청 각각의 진함 정도를 숫자로 표현하며 해당 색에는 각각 8비트가 할당된다. 하지만 여기서 미사용되는 8비트가 존재하는데 이는 색의 투명도를 담당하는 부분이다. 또한 이러한 색은 16진 트리플렛(예: #ffff00은 노란색)을 이용해 각각의 8비트 값을 16진 표기를 통해 두 자리 문자로 바꿔서도 표현할 수 있다. &lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2210157일차-91p--97p&quot;&gt;221015(7일차) 91p ~ 97p&lt;/h3&gt;
+&lt;p&gt;비트는 매우 중요하나, 톱니바퀴로 돌아가던 계산기의 시초에 비트는 존재하지 않았고 계산자를 이용한 오트레드의 기계식 계산기와 찰스 배비지의 차분 기관에도 비트의 개념은 존재하지 않는다. 컴퓨터가 언제부터 비트와 함께 했는지 알아 보기 전, 먼저 아날로그(예: 손가락)와 디지털(예: 자)에 대해 알아야 한다. 우리는 자로 실수를 표현할 수 있으나 손가락으로는 할 수 없다. 자는 수학적으로 연속적이나 손가락은 이산적(하나하나 다른 존재로 구분됨)이기 때문이다. 전자기술 영역에서 아날로그는 연속적인 것을, 디지털은 이산적인 것을 뜻하는데 실수를 계산할 수 있단 측면에서 아날로그가 계산에 있어 적합해 보이나 큰 숫자를 표현하기 위해 그만큼 커다란 자가 필요하고 이는 에너지의 효율을 위해 작은 하드웨어를 추구하는 흐름에 어긋난다. 뿐만 아니라 우리가 연속성을 이용해 계산을 하면 외부의 그 어떤 방해도 없어야만 정밀도 높은 측정이 가능한데 회로 내에서 이러한 누화 효과를 막는 건 실질적으로 불가능하므로 높은 정밀도를 추구해야 한다면 잡음 내성을 가진 디지털 회로는 필수적인 존재다.      &lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2210168일차-98p--108p&quot;&gt;221016(8일차) 98p ~ 108p&lt;/h3&gt;
+&lt;p&gt;정밀도를 위해 많은 엔지니어들은 하단부, 직선부, 상단부가 나누어져 출력의 단계가 구분된 전이 함수를 이용해 아날로그로부터 디지털을 구현하고자 했다.앞서 출력값이 급변하는 지점(판정 기준)을 문턱값이라 한다. 이러한 문턱값이 비트에 적용될 경우, 0과 1만이 존재하는 만큼 출력값의 변화폭이 크기 때문에 전이 함수의 하단부(차단)와 상단부(포화) 간의 간격이 더욱 넓어져 그만큼의 재량권이 증가한다. 컴퓨터에 대해 이해하기 위해선 원동력이라 할 수 있는 전기 이야기를 안 할 수가 없다. 전기를 흐르게 하거나 차단하는 게이트 밸브의 열고 닫힘은 곧 1과 0과 같으며 이를 이용해 논리 연산자의 구현이 가능해진다. 전기는 물과 같기 때문에 흐름에 있어 전파 지연이 발생할 수 있고 전류는 전압과 저항에 영향을 받는다(옴의 법칙: 전류는 전압을 저항으로 나눈 값과 같음, I = V/R). 이러한 전기는 부도체를 이용해 만든 스위치를 통해 제어할 수 있으며 전기의 흐름을 발생 또는 통제하는 전체적인 시스템을 회로라고 하며 이는 스키매틱(회로도)을 통해 문서화된다. 스위치가 단극인지 쌍극인지에 따라 통제할 수 있는 회로의 수가 다르며 만약 스위치 하나로 켜고 끄는 걸 동시에 하는 게 아닌 스위치마다 다른 기능(켜고 끔)을 부여하고 싶다면 단극쌍투 스위치를 이용하면 된다.&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2210189일차-109p--115p&quot;&gt;221018(9일차) 109p ~ 115p&lt;/h3&gt;
+&lt;p&gt;전자적 기술은 역사를 거쳐 발전했고 단순함에서 복잡함으로 나아갔고 그 첫 번째 역사로는 릴레이가 있다. 선을 말아 코일로 만들고 전류를 흐르게 하면 해당 코일은 전자석이 되며, 릴레이는 이러한 전자석을 통해 회로의 스위치를 움직인다. 하지만 릴레이는 속도가 느리고 사이에 이물질이 있으면 성능이 급격하게 저하되기 때문에 이를 위한 대체재로 물체를 충분히 가열하면 전자가 튀어나오는 열전자 방출을 원리로 하는 진공관을 만들었고 뒤이어 진공관과 비슷하지만 반도체(도체와 반도체 사이를 오가는 물질)로 이뤄진 기판 또는 슬랩 위에 만들어지는 트렌지스터가 만들어졌으며 해당 방식이 가장 우세하게 쓰이고 있으며 추후 발명한 직접 회로를 통해 트렌지스터에 복잡한 시스템을 구현하는 것을 더욱 적은 부품으로 만드는 게 가능해졌다. 이렇듯 사람들은 더 작고 더 저렴하고 에너지를 효율적으로 사용할 수 있도록 회로를 만드는 기술 개발에 힘을 썼다. &lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;22102210일차-116p--122p&quot;&gt;221022(10일차) 116p ~ 122p&lt;/h3&gt;
+&lt;p&gt;논리 연산을 수행하는 회로를 논리 게이트(게이트)라 한다. 게이트 IC(집적 회로)를 사용하면 회로를 처음부터 설계하지 않고 복잡한 회로 구현이 가능하며 게이트의 종류로는 AND, OR, XOR, 인버터(NOT)가 있다. 하지만 AND 게이트나 OR 게이트는 NAND(not and)와 NOR(not or)에 트렌지스터를 붙여 출력을 반전시키는 방식으로 구성되어 효율 측면에서 좋지 않기 때문에 디지털 회로 설계에 기본적으로 사용하는 게이트는 NAND와 NOR이다. 드모르간 법칙에 의해 NAND 게이트만으로 AND을 나타낼 수 있으나 반대의 경우는 장치가 필요하므로 NAND(더불어 NOR)을 기본적으로 썼을 때 더 많은 논리 표현이 가능하다. 이런 게이트는 논리 신호(0 또는 1)를 받아 처리하나 앞서 설명했던 디지털적 장치를 이용한다 해도 신호의 속도가 느릴 경우 잡음이 발생해 출력 신호에 글리치(작은 오류)가 발생한다. 이는 판정 기준이 이력(과거 현상)에 따라 달라지는 이력 현상을 통해 해결할 수 있는데 즉, 0에서 1이 될 때와 1에서 0이 될 때에 다른 문턱값을 매기면 값이 변동 간격이 기존에 비해 크게 변하고 잡음 내성 또한 강해진다. 이러한 원리를 사용하는 게이트로 슈미트 트리거가 있다. 하지만 이력만으로도 충분하지 못할 경우가 있는데 이때는 차동(차이, 격차) 신호를 이용한다. 이력은 문턱값이라는 절대 기준에 평가되었으나 차동 신호는 서로 반전관계에 있는 신호 쌍 간의 차이로 측정하기 때문에 잡음의 영향을 덜 받는다. 물론 차등 신호 역시 압도적인 잡음에는 영향을 받게 되는데 이때는 공통 모드 판별비(CMRR)를 이용해 처리 가능한 잡음의 양을 미리 표시한다. 뿐만 아니라 회로 설계자들은 전파 지연도 가정하며 게이트의 효율적 작동을 고민해야 한다. &lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;22102311일차-123p--134p&quot;&gt;221023(11일차) 123p ~ 134p&lt;/h3&gt;
+&lt;p&gt;게이트의 출력에는 다양한 유형이 존재한다. 일반적 게이트 출력은 토템폴이라 하는데 이는 나란히 붙은 (1과 0을 담당는)트렌지스터 모양이 원기둥 토템과 닮아 붙여진 이름으로 출력의 1을 얻기 위해 출력과 높은 논릿값 1을 연결하는 것을 액티브 풀업이라 말하며 토템폴 출력을 서로 연결하면 음극과 양극을 서로 연결하는 모양이 되어 불가능하다. 오픈 컬렉터/오픈 드레인 출력은 액티브 풀업이 없기 때문에 서로 연결이 가능하며 필요하면 패시브 풀업(풀업 저항을 논리적인 1값을 공급하는 공급 전압에 연결)에 연결할 수 있다. 하지만 해당 방식은 액티브 풀업만큼 응답이 빠르지 않아 이를 해결하기 위한 트라이스테이트 출력이 있다. 기존의 두 가지 상태에서 꺼진 상태(hi-Z(임피던스))인 세 번째 상태를 더해 함께 다루는 방식으로 이로 인해 활성화 입력이 존재한다. 해당 출력을 사용하면 수많은 장치를 서로 선으로 직접 연결할 수 있으나 한 번에 한 개의 장치만 활성화해야 한다. 게이트의 등장으로 하드웨어 설계 과정은 단순해졌고 다양한 게이트 조합이 등장했는데 가산기, 디코더, 디멀티플렉서, 실렉터가 그것이다. 가산기는 비트의 덧셈에서 작동되는 논리 연산에서 착안해 XOR 게이트와 AND 게이트를 조합해 만들 수 있으며 디코더는 인코딩된 수를 개별 비트의 집합으로 만드는 기능을 논리 게이트로 구현한 것이다. 이를 이용해 디멀티플렉서(디먹스)를 만들 수 있는데 입력을 몇 가지 출력 중 한 곳에 전달할 수 있다. 마지막 실렉터(또는 멀티플렉서(먹스))는 마찬가지로 디코더에 게이트를 추가해 구현하며 해당 스키매틱을 보면 디먹스를 뒤집은 모양이다. &lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 18 Oct 2022 00:00:00 +0900</pubDate>
+      </item>
+    
+      <item>
+        <title>전예린 복습일지(2)</title>
+        <link>/%EC%A0%84%EC%98%88%EB%A6%B0/%EB%B3%B5%EC%8A%B5%EC%9D%BC%EC%A7%80/2022/10/17/reapeating(2)-YR.html</link>
+        <guid isPermaLink="true">/%EC%A0%84%EC%98%88%EB%A6%B0/%EB%B3%B5%EC%8A%B5%EC%9D%BC%EC%A7%80/2022/10/17/reapeating(2)-YR.html</guid>
+        <description>&lt;h3 id=&quot;221017--side-effect부수-효과와-useeffect&quot;&gt;221017 || side Effect(부수 효과)와 useEffect&lt;/h3&gt;
+
+&lt;p&gt;함수 내의 어떤 구현이 함수 외부에 영향을 끼치는 경우 해당 함수는 Side Effect가 있다고 이야기한다. 
+보통 React 애플리케이션을 작성할 때 AJAX 요청, LocalStorage 또는 타이머와 같이 React와 상관없는 API를 사용하며 많은 Side Effect가 발생하게 된다.
+React는 이러한 Side Effect를 다루기 위한 Hook인 Effect Hook &lt;b&gt;useEffect&lt;/b&gt;함수를 제공한다.
+&lt;br /&gt;
+useEffect() 함수는 React component가 렌더링 될 때마다 특정 작업(Side effect)을 실행할 수 있도록 하는 리액트 Hook이다. &lt;br /&gt;useEffect의 기본형태를 살펴보자.&lt;/p&gt;
+
+&lt;div class=&quot;language-js highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nx&quot;&gt;useEffect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;deps&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;function은 실행하고자 하는 함수이며, 해당 함수 내에서 side Effect를 실행하면 된다. deps는 배열 형태이며 function을 실행시킬 조건이다. 
+deps 배열 내의 어떤 값이 변할 때에만, function이 실행된다.
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;이제 useEffect의 조건부 실행에 대해 알아보자.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;useEffect(function,[])&lt;/li&gt;
+  &lt;li&gt;useEffect(funtion)&lt;/li&gt;
+  &lt;li&gt;useEffect(function,[name])&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;1번처럼 deps 부분에 빈 배열을 넣게되면, 맨 처음 렌더링 될 때 한 번만 실행된다. 
+2번처럼 deps 부분을 생략한다면, 해당 컴포넌트가 렌더링 될 때마다 useEffect가 실행된다.
+3번처럼 deps 부분에 특정 값을 넣게되면, 그 특정 값인 ‘name’이 업데이트 될 때마다 실행된다.&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 17 Oct 2022 00:00:00 +0900</pubDate>
+      </item>
+    
+      <item>
+        <title>윤태연 복습일지(2)</title>
+        <link>/%EC%9C%A4%ED%83%9C%EC%97%B0/%EB%8F%85%EC%84%9C%EC%9D%BC%EC%A7%80/2022/10/17/Repeating-Lift-State.html</link>
+        <guid isPermaLink="true">/%EC%9C%A4%ED%83%9C%EC%97%B0/%EB%8F%85%EC%84%9C%EC%9D%BC%EC%A7%80/2022/10/17/Repeating-Lift-State.html</guid>
+        <description>&lt;h1 id=&quot;상태-끌어올리기-2022--10--17&quot;&gt;상태 끌어올리기: 2022 / 10 / 17&lt;/h1&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;리액트의-특징과-상태-끌어올리기의-배경&quot;&gt;리액트의 특징과 상태 끌어올리기의 배경&lt;/h2&gt;
+
+&lt;p&gt;우리는 리액트식 사고를 배웠다. 바로 기능마다 사용자 정의 컴포넌트를 만들어 파일, 페이지, 기능 등을 나눠 제작했다. 그리고 리액트는 아래서부터 차근차근 작은 컴포넌트를 조합해 큰 컴포넌트를 만들어 낸다. 이런 식으로 만들어 리액트는 ‘상향식 구조’(트리 구조)로 개발된다.&lt;/p&gt;
+
+&lt;p&gt;또 리액트 특징이 데이터의 흐름은 위에서 아래로 흐른다. 왜냐면 &amp;lt;Twittler&amp;gt; 안에서 &amp;lt;Tweets&amp;gt;가 렌더링 되는 식의 트리 구조로 이뤄져 있어 부모에서 자식이 이어지는 형태를 지니고 있고, 유지•보수에 용이하기에 하향식이다. 또 비슷한 이유로 데이터의 흐름은 단방향이다. 왜냐고 묻지 말자. Virtual DOM과 관련이 있기에 그때 이 기억을 상기하여 그때 제대로 배우면 된다. 한마디로 Virtual DOM 특성 상 뷰를 통채로 바꾸기에 훨씬 안정적이고 관리 측면에서 우수하다.&lt;/p&gt;
+
+&lt;p&gt;그런데 자식이 부모의 상태를 바꿀 때가 있다?! 예를 들어 하나의 SNS을 담는 컴포넌트가 있고, 크게 2개로 게시물과 입력창의 컴포넌트가 있다고 가정해보자, 또한 게시물의 기본값이(State) 부모에 있다고 하자. 입력(Input)을 하면 전체 SNS 게시물 목록에 영향을 줘야하는 로직을 짜야한다. 엥? 역방향, 자식이 부모의 상태의 기본값에 영향을 줬네?! 이거 안돼요! 라고 말할 수 밖에 없다. 하지만 여기서 우리는 Props와 파라미터, 또 setState를 한방에 묶는 엄청난 스킬 ‘상태 끌올’을 사용할 수 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;상태-끌어올리기-사용법&quot;&gt;상태 끌어올리기 사용법&lt;/h2&gt;
+
+&lt;p&gt;한마디로 해서 자식의 사용자 정의 컴포넌트(함수)에 파라미터를 넣고 함수를 정의하는 중괄호 안에다가 ⭐️”전달하려는 값”을 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;파라미터(값)&lt;/code&gt;으로 넣어주고, 부모에 자식을 렌더링하는 곳에 Props를 설정하고 그 Props에 적용하고픈 부모의 함수를 중괄호 안에 넣어주면 된다. &lt;a href=&quot;https://velog.io/@okko8522/%EC%BD%94%EB%93%9C%EC%8A%A4%ED%85%8C%EC%9D%B4%EC%B8%A0S2U98W%ED%99%94%EC%88%98#%EC%98%88%EC%8B%9C&quot;&gt;예시&lt;/a&gt;를 보며 읽으며 어떻게 적용되는지 보자.&lt;/p&gt;
+
+&lt;p&gt;이렇게 Props를 이용하여 리액트의 규칙을 거스르지 않고도 자식의 반항을 적용할 수 있다. 화이팅!&lt;/p&gt;
+</description>
+        <pubDate>Mon, 17 Oct 2022 00:00:00 +0900</pubDate>
+      </item>
+    
+      <item>
+        <title>김일태 복습일지</title>
+        <link>/%EA%B9%80%EC%9D%BC%ED%83%9C/%EB%B3%B5%EC%8A%B5%EC%9D%BC%EC%A7%80/2022/10/17/Review-IT.html</link>
+        <guid isPermaLink="true">/%EA%B9%80%EC%9D%BC%ED%83%9C/%EB%B3%B5%EC%8A%B5%EC%9D%BC%EC%A7%80/2022/10/17/Review-IT.html</guid>
+        <description>&lt;h1 id=&quot;json&quot;&gt;JSON&lt;/h1&gt;
+
+&lt;p&gt;인터넷으로 데이터를 주고받을 때 깔끔한 형식으로 정리한 데이터를 주고 받아야한다.&lt;br /&gt;
+이를 위해 고안된 데이터 담는 형식 중 하나이며 지금 가장 주류라고 생각하면 된다.&lt;/p&gt;
+
+&lt;h3 id=&quot;xml&quot;&gt;XML&lt;/h3&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;데이터이름&amp;gt;값&amp;lt;/데이터이름&amp;gt;
+// EX
+&amp;lt;삼성전자&amp;gt;50000&amp;lt;/삼성전자&amp;gt;
+&amp;lt;카카오&amp;gt;100000&amp;lt;/카카오&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;food&amp;gt;
+  &amp;lt;name&amp;gt;Belgian Waffles&amp;lt;/name&amp;gt;
+  &amp;lt;price&amp;gt;$5.95&amp;lt;/price&amp;gt;
+  &amp;lt;description&amp;gt; Belgian Waffles &amp;lt;/description&amp;gt;
+  &amp;lt;calories&amp;gt;650&amp;lt;/calories&amp;gt;
+&amp;lt;/food&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;JavaScript 쓰면 object 자료로 쉽게 변환이 가능하지만 작성하기 귀찮고 용량도 많이 잡아먹는다.&lt;/p&gt;
+
+&lt;h3 id=&quot;csv&quot;&gt;CSV&lt;/h3&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Year, Brand, Model
+1997, Ford, E350
+2000, Mercury, Cougar
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;표 형태를 이루고 있어 데이터베이스에 있던 내용을 CSV로 변환하기 쉽지만, 고차원 데이터는 표현이 어렵다.&lt;/p&gt;
+
+&lt;h3 id=&quot;jsonjavascript-object-notation&quot;&gt;JSON(JavaScript Object Notation)&lt;/h3&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{&quot;name&quot; : &quot;kim&quot;, &quot;age&quot; : 20}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;객체와 비슷한 형식을 가져 고차원 데이터도 표현이 가능하다.&lt;br /&gt;
+객체와 다른 점은 데이터마다 키값을 설정해야 하며 ““로 감싸야 한다.(키 값이 문자 취급)&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;JSON.stringify() // object나 array를 JSON 형식으로 변환
+JSON.parse() // JSON 형식을 다시 object나 array로 변환
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;hr /&gt;
+
+&lt;h3 id=&quot;재귀함수&quot;&gt;재귀함수&lt;/h3&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;자기 자신을 반환하는 함수를 의미하며 주어진 문제를 
+비슷한 구조의 더 작은 문제로 나눌 수 있는 경우나 중첩된 반복문이 많아 엄청나게 긴 for문을 간결하게 줄일 수 있고 
+반복문의 중첩 횟수(number of loops)를 예측하기 어려운 경우도 간단하게 해결할 수 있다.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 17 Oct 2022 00:00:00 +0900</pubDate>
+      </item>
+    
+  </channel>
+</rss>
