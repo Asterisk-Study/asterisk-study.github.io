@@ -2,7 +2,7 @@
 title: "윤태연 복습일지(1)"
 layout: post
 comments: true
-categories: [윤태연/독서일지]
+categories: [윤태연/복습일지]
 tags: 윤태연
 ---
 
