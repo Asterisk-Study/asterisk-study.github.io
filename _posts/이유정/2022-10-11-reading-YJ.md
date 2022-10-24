@@ -1,6 +1,6 @@
 ---
 layout: single
-title: 이유정 독서일지: 한 권으로 읽는 컴퓨터 구조와 프로그래밍
+title: "이유정 독서일지(1장): 컴퓨터 내부의 언어 체계"
 categories: 독서일지
 tags: 이유정
 ---
