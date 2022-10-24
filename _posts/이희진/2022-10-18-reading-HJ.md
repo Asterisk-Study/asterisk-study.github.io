@@ -1,8 +1,9 @@
 ---
-layout: single
 title: "이희진 독서일지(1): 한 권으로 읽는 컴퓨터 구조와 프로그래밍"
-categories: 독서일지
-tags: 이희진
+layout: post
+comments: true
+categories: [이희진/독서일지]
+tags: []
 ---
 
 ### 221001(1일차) 34p ~ 49p

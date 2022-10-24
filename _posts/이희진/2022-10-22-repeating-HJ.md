@@ -1,8 +1,9 @@
 ---
-layout: single
 title: "이희진 복습일지"
-categories: 복습일지
-tags: 이희진
+layout: post
+comments: true
+categories: [이희진/복습일지]
+tags: []
 ---
 
 ### 221011 || URI vs URL

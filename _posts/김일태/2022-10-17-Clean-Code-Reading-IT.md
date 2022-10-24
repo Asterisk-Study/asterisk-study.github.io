@@ -1,7 +1,8 @@
 ---
-layout: single
 title: "김일태 독서일지 : Clean Code"
-categories: 독서일지
+layout: post
+comments: true
+categories: [김일태/독서일지]
 tags: 김일태
 ---
 

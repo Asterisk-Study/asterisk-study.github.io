@@ -1,8 +1,9 @@
 ---
-layout: single
 title: "이영우 독서일지"
-categories: 이영우
-tags: 독서일지
+layout: post
+comments: true
+categories: [이영우/독서일지]
+tags: []
 ---
 
 1일차 8p ~ 14p

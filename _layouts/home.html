@@ -1,22 +1,60 @@
 ---
-layout: archive
+layout: default
 ---
 
-{{ content }}
+<div class="home">
+  <div class="selfie">
+  	<a href="https://www.notion.so/codestates/ASTERISK-40845fa447f7410c8a89ec58558f95dd">
+  		<img src="\assets\img\뿔소.jpg">
+  	</a>
+  </div>
+  {% if site.theme_settings.header_text %}
+  <div class="call-out"
+  style="background-image: url('{{ site.baseurl }}/{{ site.theme_settings.header_text_feature_image }}')">
+    {{ site.theme_settings.header_text }}
+  </div>
+  {% endif %}
 
-<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
+  <hr>
+  <div class="posts">
 
-{% if paginator %}
-  {% assign posts = paginator.posts %}
-{% else %}
-  {% assign posts = site.posts %}
-{% endif %}
+    {% for post in paginator.posts %}
+    <div class="post-teaser">
+      <header>
+        <h2>
+          <a class="post-link" href="{{ post.url | relative_url }}">
+            {{ post.title }}
+          </a>
+        </h2>
+        <p class="meta">
+          {{ post.date | date: "%B %-d, %Y" }}
+        </p>
+        <div class="excerpt">
+          {{ post.excerpt }}
+          <!-- <a class="button" href="{{ post.url | relative_url }}">
+            {{ site.theme_settings.str_continue_reading }}
+          </a> -->
+        </div>
+      </header>
+    </div>
+    {% endfor %}
 
-{% assign entries_layout = page.entries_layout | default: 'list' %}
-<div class="entries-{{ entries_layout }}">
-  {% for post in posts %}
-    {% include archive-single.html type=entries_layout %}
-  {% endfor %}
+  </div>
+
+  {% if paginator.total_pages > 1 %}
+  <div class="pagination">
+    {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path | relative_url | replace: '//', '/' }}" class="button" >
+      <i class="fa fa-chevron-left"></i>
+      {{ site.theme_settings.str_previous_page }}
+    </a>
+    {% endif %}
+    {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path | relative_url | replace: '//', '/' }}" class="button" >
+      {{ site.theme_settings.str_next_page }}
+      <i class="fa fa-chevron-right"></i>
+    </a>
+    {% endif %}
+  </div>
+  {% endif %}
 </div>
-
-{% include paginator.html %}

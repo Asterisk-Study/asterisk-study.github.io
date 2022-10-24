@@ -1,8 +1,10 @@
 ---
-layout: single
 title: "전예린 복습일지(3)"
 categories: 복습일지
-tags: 전예린
+layout: post
+comments: true
+categories: [전예린/복습일지]
+tags: []
 ---
 
 ### 221017 || request 프로퍼티 : req.body() / query() / params()의 차이

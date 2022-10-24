@@ -1,8 +1,9 @@
 ---
-layout: single
 title: "전예린 복습일지(2)"
-categories: 복습일지
-tags: 전예린
+layout: post
+comments: true
+categories: [전예린/복습일지]
+tags: []
 ---
 
 ### 221017 || side Effect(부수 효과)와 useEffect
