@@ -1,5 +1,5 @@
 ---
-title: "강진원 복습일지2"
+title: "AJAX"
 layout: post
 comments: true
 categories: [강진원/복습일지]
