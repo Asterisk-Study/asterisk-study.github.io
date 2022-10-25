@@ -1,5 +1,5 @@
 ---
-title: "2.JSON"
+title: "JSON"
 layout: post
 comments: true
 categories: [강진원/복습일지]
