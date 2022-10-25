@@ -14,6 +14,7 @@ layout: default
   <section class="post-content">{{ content }}</section>
   {% include tags_list.html tags=page.tags tag_count=page.tags.size %}
 </article>
+<div>
 <script src="https://utteranc.es/client.js"
         repo="Asterisk-Study / Asterisk-Algorithm"
         issue-term="pathname"
@@ -21,6 +22,7 @@ layout: default
         crossorigin="anonymous"
         async>
 </script>
+</div>
 
 <!-- Post navigation -->
 {% if site.theme_settings.post_navigation %}
