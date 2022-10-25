@@ -62,11 +62,25 @@ theme_settings:
 
   # Colours, typography and padding
   # Open the "_sass > base" folder, and open "_variables.scss"
-  google_fonts: 'Noto Sans KR',"Nanum+Gothic:400,700",'Montserrat', sans-serif "Nanum+Gothic:400,700"
+  google_fonts: "Noto Sans KR"
 
 
   # Post navigation
   post_navigation: true
+  
+  #comments
+  comments:
+  # 'disqus' / 'giscus' / 'utterances' are available
+  provider:            utterances
+
+  # You must install utterances github app before use.(https://github.com/apps/utterances)
+  # Make sure all variables are set properly. Check below link for detail.
+  # https://utteranc.es/
+  utterances:
+    repo:                "Asterisk-Study / Asterisk-Algorithm"
+    issue-term:          "pathname"
+    label:               "Comments"
+    theme:               "github-light"
 
 encoding: 'utf-8'
 # Configure the plugin here
