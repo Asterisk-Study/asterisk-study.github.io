@@ -1,5 +1,5 @@
 ---
-layout: single
+layout: post
 title: "복습일지(4)"
 categories: 복습일지
 tags: 전예린
