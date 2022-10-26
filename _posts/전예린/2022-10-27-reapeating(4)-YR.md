@@ -1,11 +1,12 @@
 ---
-layout: post
-title: "복습일지(4)"
-categories: 복습일지
-tags: 전예린
+title: "복습일지(4)"   
+layout: post    
+comments: true  
+categories: [전예린/복습일지]
+tags: Json.stringfy, Json.parse
 ---
 
-### 221027 || Json.stringfy & JSON.parse
+### 221027 || Json.stringfy & Json.parse
 
 JSON은 JavaScript Object Notation의 줄임말로, 데이터 교환을 위해 만들어진 객체 형태의 포맷이다. JSON은 특히 네트워크를 통해 서로 다른 시스템들이 데이터를 주고 받을 때 많이 사용된다.
 
