@@ -3,7 +3,7 @@ title: "이영우 독서일지"
 layout: post
 comments: true
 categories: [이영우/독서일지]
-tags: []
+tags: [이영우]
 ---
 
 1일차 8p ~ 14p
