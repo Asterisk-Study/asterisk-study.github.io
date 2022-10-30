@@ -2,36 +2,12 @@
 layout: page
 title: About
 permalink: /about/
-feature-img: ![스터디사진](https://user-images.githubusercontent.com/94962427/198858472-9326ae9f-7ddc-4ce7-b8f2-0b6dd37e41b6.jpeg)
+feature-img: "assets/img/sample_feature_img_2.png"
 ---
 
-# 스터디 그룹 Asterisk입니다!
+Type Theme is a free and open-source theme for [Jekyll](http://jekyllrb.com/), licensed under the MIT License.
 
-매주 월요일 저녁 8시(공휴일일 경우 가장 가까운 평일에!)에 알고리즘 풀이와 복습한 내용을 공유하며 서로 꾸준하게 성장하고자 합니다!  
-모두 수료와 취뽀까지 함께 달립시다! 주요 활동은 다음과 같습니다.
 
-- 독서일지
-- 복습일지
-- 알고리즘
+Head over to the [theme's documentation](https://rohanchandra.github.io/project/type/) for much more information about Type Theme or to install this theme on your own Jekyll site.
 
-세 가지 모두 화이팅합시다!  
-<br />
-
-## 독서일지
-
-일주일에 주 3회 책을 읽고 내용 및 감상을 자유롭게 적어 주세요.  
-형식은 상관없습니다! 주에 세 번만 꼭 해 주세요.  
-<br />
-
-## 복습일지
-
-일주일 동안 배운 내용 중 깊게 공부하고픈 내용에 대해 작성합니다.  
-월요일에 문제 풀이 발표하지 않으신 분들은 자동으로 복습일지 발표자가 됩니다.  
-다른 분들께 충분히 설명하고 질문을 받을 수 있도록 충분히 준비합시다!  
-<br />
-
-## 알고리즘
-
-일주일에 세 문제씩 풀고 모두 모여 풀이과정을 공유하는 시간입니다! 자세한 사항은 다음 리포지토리를 참고해 주세요.  
-[알고리즘 리포지토리](https://github.com/Asterisk-Study/asterisk-study.github.io.git)  
-<br />
+This file is an example of a page in Jekyll, that automatically shows up in the header navigation, you can delete or modify this file freely.
