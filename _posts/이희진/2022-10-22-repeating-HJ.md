@@ -55,3 +55,86 @@ HTML 요소를 가리키는 객체로 해당 노드는 다른 노드와 부모-�
 HTML 요소의 텍스트를 가리키는 객체로 요소 노드가 문서의 구조라면 텍스트 노드는 문서의 내용을 의미한다. 텍스트 노드는 요소 노드의 자식 노드로 접근하기 위해선 요소 노드에 먼저 접근해야 하며 텍스트 노드는 본인의 자식 노드를 가질 수 없는 리프 노드다. 즉, DOM 트리의 최종단이라 할 수 있다.  
 <br />
 
+### 221030 || DOM(2)
+HTML을 자바스크립트를 사용해 동적으로 제어하기 위해선 먼저 요소 노드를 취득해야 한다. 텍스트 노드도 어트리뷰트 노드도 결국 요소 노드와 연결되어 있으므로 이는 어떤 노드를 제어하려 해도 기본적으로 요소 노드에 먼저 접근해야 함을 알 수 있다. 요소 노드를 취득하는 방법은 총 4가지로 말할 수 있다.  
+
+1. id 이용   
+* document.prototype.getElementById() 메서드 : 인수로 전달한 id 값을 갖는 하나의 요소 노드 반환하며 만약 없을 시 null 반환함
+```js
+<ul>
+  <li id='red'>빨강</li>
+  <li id='blue'>파랑</li>
+  <li id='green'>초록</li>
+</ul>
+
+<script>
+ let useOfIdVal = document.getElementById('red') 
+ // 이렇게 되면 useOfIdVal에 id 값이 'red'인 요소 노드가 할당됨
+</script>
+```
+이때, HTML 요소에 id 값을 부여하면 해당 값이 동일한 이름의 전역 변수가 암묵적으로 선언되고 해당 노드 객체가 할당되는 부수 효과가 발생한다. 하지만 id 값과 동일한 이름의 전역 변수가 이미 선언되어 있다면 이 변수에 노드 객체가 재할당되는 일은 발생하지 않는다. 
+```js
+<div id="happy">행복</dive> // 만 있을 경우 전역 변수 happy에는 해당 요소 노드(div)가 할당된다.
+
+<div id="happy">행복</dive>
+let happy = 'you' // 그러나 이렇게 동일한 변수명으로 변수 선언 및 할당이 되어 있는 경우 요소 노드가 할당되는 일은 없다.
+``` 
+   
+2. 태그 이름 이용    
+* document.prototype.getElementByTagName() 메서드 : 인수로 전달한 태그 이름을 갖는 모든 노드 요소를 HTMLCollection 객체로 반환함
+```js
+<ul>
+  <li id='red'>빨강</li>
+  <li id='blue'>파랑</li>
+  <li id='green'>초록</li>
+</ul>
+
+<script>
+ let useOfTagName = document.getElementByTagName('li') 
+ // 이렇게 되면 <li>에 해당하는 모든 요소 노드에 대한 HTMLCollection(DOM 컬렉션 객체로 유사 배열 객체) 객체가 반환됨
+</script>
+```
+이때 document 자리에 특정 요소 노드를 넣어 호출이 가능한데 이럴 경우 특정 요소 노드의 자손 노드 중에서 탐색해 반환한다.   
+
+3. class 이용
+* document.prototype.getElementsByClassName() 메서드 : 인수로 전달한 class 값을 갖는 모든 요소 노드를  HTMLCollection 객체로 반환함  
+```js
+<ul>
+  <li class=' color red'>빨강</li>
+  <li class='color blue'>파랑</li>
+  <li class='color green'>초록</li>
+</ul>
+
+<script>
+ let useOfTagName = document.getElementsByClassName('color')
+ // 이렇게 되면 클래스 값 color에 해당하는 모든 요소 노드에 대한 HTMLCollection 객체가 반환됨
+ // 태그 이름을 이용해 탐색할 때와 마찬가지로 특정 요소의 자손 노드를 탐색하는 것이 가능함
+</script>
+```  
+
+4. CSS 선택자 이용 
+* document.prototype.querySelector() 메서드 : 인수로 전달한 CSS 선택자에 해당하는 하나의 요소 노드를 반환함  
+```js
+//대표적인 CSS 선택자
+* { ... } // 모든 요소 선택
+div { ... } // div 태그 요소 모두 선택
+#id값 { ... } // id값에 해당하는 요소 선택 
+.class값 { ... } // class값에 해당하는 요소 선택
+
+<script>
+ let useOfCSSSelector = document.querySelector('.color')
+ // 이렇게 되면 클래스 값 color에 해당하는 첫 번째 요소 노드를 반환함
+ // 이때 querySelectorAll 일 경우, 인수에 해당하는 모든 노드 요소에 대한 DOM 컬랙션 객체인 Nodeliest를 반환함
+</script>
+``` 
+* element.prototype.matches() 메서드 : 인수로 전달한 CSS 선택자를 통해 특정 요소 노드를 취득 가능한지에 대해 booleanr값을 반환함
+```js
+<script>
+ let useOfCSSSelector = document.querySelector('.red')
+ useOfCSSSelector.matches('.blue')
+ // 해당 CSS 선택자로 class값이 red인 요소 노드에 접근할 수 없으므로 false가 반환됨
+</script>
+``` 
+<br />
+
+
