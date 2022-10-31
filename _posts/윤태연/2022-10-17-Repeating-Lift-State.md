@@ -1,5 +1,5 @@
 ---
-title: "윤태연 복습일지(2)"
+title: "윤태연 복습일지(2): 상태 끌어올리기"
 layout: post
 comments: true
 categories: [윤태연/복습일지]
