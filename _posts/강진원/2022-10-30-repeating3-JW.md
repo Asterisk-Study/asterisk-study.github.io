@@ -1,4 +1,10 @@
-# UI / UX
+---
+title: "UI/UX"
+layout: post
+comments: true
+categories: [강진원/복습일지]
+tags: [UI/UX]
+---
 
 ### UI(User Interface, 사용자 인터페이스)
 UI는 사람들이 컴퓨터와 상호 작용하는 시스템을 의미한다. 일반적으로 떠오르는 화면상의 그래픽 요소 외에도 **키보드, 마우스 등의 물리적 요소도 컴퓨터와 상호작용을 하기 위한 시스템 이므로 UI라고 할 수 있다.**
