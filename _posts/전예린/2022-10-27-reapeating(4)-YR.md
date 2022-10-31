@@ -19,7 +19,7 @@ JSON 내장 객체는 JavaScript 객체와 JSON 문자열 간의 상호 변환�
 Json.parse는 JSON 문자열을 JavaScript 객체로 변환할 때 사용한다. parse() 메서드는 JSON 문자열을 인자로 받고 결과값으로 JavaScript 객체를 반환한다.
 
 
-예를 들어, 아래와 같은 JSON 문자열을 Json.parse()의 파라미터로 전달해준 결과값을 obj라는 변수에 할당해주면,
+예를 들어, 아래와 같은 JSON 문자열을 Json.parse()의 파라미터로 전달해주고  결과값을 obj라는 변수에 할당해주면,
 ```js
 const str = `{
   "name": "홍길동",
@@ -63,7 +63,7 @@ JSON 문자열에서는 키(key)를 나타낼 때 반드시 쌍따옴표로 감�
 
 역으로 JavaScript 객체를 JSON 문자열로 변환할 때는 JSON 객체의 stringify() 메서드를 사용한다. stringify() 메서드는 JavaScript 객체를 인자로 받고 JSON 문자열을 반환한다.
 
-예를 들어, 아래와 같은 JavaScript 객체를 Json.parse()의 파라미터로 전달해준 결과값을 str이라는 변수에 할당해주면,
+아래와 같은 JavaScript 객체를 Json.parse()의 파라미터로 전달해주고 그 결과값을 str이라는 변수에 할당해주면,
 
 ```js
 const obj = {
