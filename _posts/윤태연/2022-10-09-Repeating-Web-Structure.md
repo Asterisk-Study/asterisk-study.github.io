@@ -1,5 +1,5 @@
 ---
-title: "윤태연 복습일지(1)"
+title: "윤태연 복습일지(1): 웹의 구조"
 layout: post
 comments: true
 categories: [윤태연/복습일지]

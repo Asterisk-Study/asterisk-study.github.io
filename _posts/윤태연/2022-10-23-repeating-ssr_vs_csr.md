@@ -1,5 +1,5 @@
 ---
-title: "윤태연 복습일지(3)"
+title: "윤태연 복습일지(3): SSR vs CSR"
 layout: post
 comments: true
 categories: [윤태연/복습일지]
