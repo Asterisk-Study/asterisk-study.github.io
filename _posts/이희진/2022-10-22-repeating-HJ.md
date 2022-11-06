@@ -137,4 +137,25 @@ div { ... } // div 태그 요소 모두 선택
 ``` 
 <br />
 
+### 221106 || DOM(3)
+요소 노드를 취득해야 그의 자식 노드 등에 접근할 수 있다. 앞서 말했듯 자식 노드, 텍스트 노드, 어트리뷰트 노드 등에 접근하기 위해선 일단 요소 노드를 취득해야 하기 때문이다. 이번 파트에서 다룰 내용은 요소 노드 취득 후 어떻게 탐색하는가에 대한 내용이다.  
+
+1. 자식 노드 탐색   
+* Node.protptype.childNodes: 자식 노드를 전부 탐색해 Nodelist에 반환한다.
+* Element.prototype.children: 자식 노드 중에서 요소 노드만 모두 탐색해 HTMLCollection에 담아 반환한다.
+* Node.prototype.firstChild(lastChild): 첫 번째(마지막) 자식 노드를 반환하며 해당 노드는 텍스트 노드이거나 요소 노드이다.
+* Element.protptype.first(last)ElementChild: 첫 번째(마지막) 자식 요소 노드를 반환하며 해당 노드는 요소 노드이다.   
+
+2. 부모 노드 탐색 : Node.prototype.parentNode 프로퍼티를 이용해 탐색한다.    
+
+3. 형제 노드 탐색   
+* Node.protptype.previousSibling(nextSibling): 형제 노드 중 자신의 바로 이전(다음) 형제 노드를 탐색해 반환한다.
+* Element.prototype.Previous(Next)ElementSibling: 형제 노드 중 자신의 바로 이전(다음) 형제 노드를 탐색해 반환하며 요소 노드만 반환한다.   
+
+이렇게 탐색 후, 간혹 노드에 대한 조작이 필요한 경우가 있다. 그 중 텍스트 노드에 대한 조작이 필요할 경우 사용하는 프로퍼티는 다음과 같다.   
+* nodeValue: 텍스트 노드의 nodeValue 프로퍼티에 변경하고자 하는 값을 할당하면 변경이 된다.
+* textContent: nodeValue와 유사하나 HTML 마크업이 파싱되지 않아 자식 노드가 있을 경우 함부로 변경하면 자식 노드가 사라진다. 따라서 할당할 때 주의가 필요하다.
+* innerText 프로퍼티 또한 텍스트 노드를 변경할 수는 있으나 CSS에 의해 비표시된 요소 노드의 텍스트를 반환하지 않는 등 CSS에 영향을 크게 받아 잘 사용하지 않는다.
+
+
 
