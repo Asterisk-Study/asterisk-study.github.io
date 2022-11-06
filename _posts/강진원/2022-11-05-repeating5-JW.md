@@ -16,14 +16,18 @@ React에서 상태를 관리 할 때, 최상위 컴포넌트의 state를 props�
 예를 들어 A->B->C->D 식으로 A가 최상위 컴포넌트이고 D가 최하위 컴포넌트일 때, B와 C는 A의 state를 props로 받을 필요 없는 컴포넌트라 가정을 하고, D는 A의 state를 props를 받아야 하는 컴포넌트라고 가정을 하면 D가 A의 상태를 받기 위해 어쩔 수 없이 B,C컴 포넌트도 A로 부터 props를 전달 받아 D에게 전달해줘야한다. 이와 같이 props를 전달하는 용도로만 쓰이는 컴포넌트들을 거치면서 데이터를 전달하는 현상을 <span style='background-color: #fff5b1'>**props drilling**</span>이라고 한다. props의 전달 횟수가 많아져 props drilling 이 발생하면 다음과 같은 문제가 발생한다.
 * 코드의 가독성이 나빠진다
 * 코드의 유지 보수가 힘들어진다.
-* state 변경시 Props 전달 과정에서 불필요하게 관여된 컴포넌트들 또한 리렌더링이 발생한다. 따라서, 웹 성능에 악영향을 줄 수 있다. 
+* state 변경시 Props 전달 과정에서 불필요하게 관여된 컴포넌트들 또한 리렌더링이 발생한다. 따라서, 웹 성능에 악영향을 줄 수 있다.     
+
+
 props drilling 이외에 컴포넌트 내부에서 상태를 관리하며 발생하는 여러 복잡한 문제들을 단번에 해결 할 수 있는 방법으로 Redux라는 상태관리 라이브러리가 있다.
 Redux는 전역 상태를 관리할 수 있는 저장소엔 Store를 제공함으로써 문제를 해결한다. Store에서 필요한 상태만 꺼내쓰는 그런 느낌
+
 ### Redux 상태 관리 순서
 Redux에서는 Action → Dispatch → Reducer → Store 순서로 데이터가 단방향으로 흐른다.
 * **Action**   
 어떤 액션을 취할 것인지 정해 놓은 **객체**   
 type은 필수로 지정해 줘야 한다. 해당 Action 객체가 어떤 동작을 명시해주는 역할을 하며 대문자,Snake_Case로 작성한다. 이후 Reducer 함수를 실행 할 때 switch 조건문에서 type으로 어떤 Action을 취할지 결정된다.
+
 * **Dispatch**   
 Reducer로 Action을 전달해주는 함수 Dispatch의 전달 인자로 Action 객체가 전달된다.
 * **Reducer**    
