@@ -52,7 +52,7 @@ const fruitList = useSelector(state => state.fruit.name);
 * useDispatch()   
 Action 객체를 Reducer로 전달해 주는 Dispatch 함수를 반환하는 메서드이다.    
 useDispatch객체를 dispatch로 재선언한 후, dispatch 변수를 활용하여 액션을 호출할 수 있다.   
-```js
+```js   
 import { useDispatch } from 'react-redux';
 
 cosnt dispatch = useDispatch(); // dispatch로 재선언하여 사용한다.
