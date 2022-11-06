@@ -8,7 +8,7 @@ tags: [상태, react, redux]
 # Redux
 React에서 상태관리를 위한 라이브러리이다.   
 
-### 등장 배경
+# 1. 등장 배경
 프론트엔드 개발에서의 상태는 "동적으로 표현되는 데이터"를 뜻한다.   
 로컬 상태는 특정 컴포넌트 안에서만 관리되는 상태이며, 전역 상태는 프로덕트 전체 혹은 여러 가지 컴포넌트가 동시에 관리하는 상태를 말한다.
 
@@ -21,22 +21,22 @@ React에서 상태를 관리 할 때, 최상위 컴포넌트의 state를 props�
 
 props drilling 이외에 컴포넌트 내부에서 상태를 관리하며 발생하는 여러 복잡한 문제들을 단번에 해결 할 수 있는 방법으로 Redux라는 상태관리 라이브러리가 있다.
 Redux는 전역 상태를 관리할 수 있는 저장소엔 Store를 제공함으로써 문제를 해결한다. Store에서 필요한 상태만 꺼내쓰는 그런 느낌
-
-### Redux 상태 관리 순서
+</br>
+# 2. Redux 상태 관리 순서
 Redux에서는 Action → Dispatch → Reducer → Store 순서로 데이터가 단방향으로 흐른다.
-* **Action**   
+### **Action**   
 어떤 액션을 취할 것인지 정해 놓은 **객체**   
 type은 필수로 지정해 줘야 한다. 해당 Action 객체가 어떤 동작을 명시해주는 역할을 하며 대문자,Snake_Case로 작성한다. 이후 Reducer 함수를 실행 할 때 switch 조건문에서 type으로 어떤 Action을 취할지 결정된다.
 
-* **Dispatch**   
+### **Dispatch**   
 Reducer로 Action을 전달해주는 함수 Dispatch의 전달 인자로 Action 객체가 전달된다.
-* **Reducer**    
+### **Reducer**    
 Dispatch에서 전달받은 Action 객체의 type 값에 따라 상태를 변경시키는 함수. 이 때, Reducer는 순수함수여야 한다. 외부 요인으로 인해 기대한 값이 아닌 엉뚱한 값으로 상태가 변경되는 일이 없어야하기 때문이다. 
-* **Store**   
+### **Store**   
 상태가 관리되는 오직 하나뿐인 저장소 역할을 한다. Redux의 state가 저장되어 있는 공간이다.
 
-### Redux Hooks
-* useSelector()   
+# 3.Redux Hooks
+### useSelector()   
 컴포넌트와 state를 연결하여 Redux의 state에 접근 할 수 있게 해준다.   
 useSelector에 매개변수에 state => state.모듈명  형식으로 상태값을 반환할 수 있다.   
 ruit 상태 안에 name, price 등의 요소를 바로 가져오고 싶을 경우, state => state.fruit.name   state => state.fruit.price 와 같이 요소요소들을 마침표로 구분하여 상태값을 가져올 수도 있다.
@@ -49,7 +49,7 @@ const fruitList = useSelector(state => state.fruit);
 const fruitList = useSelector(state => state.fruit.name);
 ```
 
-* useDispatch()   
+### useDispatch()   
 Action 객체를 Reducer로 전달해 주는 Dispatch 함수를 반환하는 메서드이다.    
 useDispatch객체를 dispatch로 재선언한 후, dispatch 변수를 활용하여 액션을 호출할 수 있다.   
 ```js   
