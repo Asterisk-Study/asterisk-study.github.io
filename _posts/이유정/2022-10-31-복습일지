@@ -1,0 +1,108 @@
+---
+title: "이유정 복습일지"
+layout: post
+comments: true
+categories: [이유정/복습일지]
+tags: []
+---
+2022-10-30 복습 
+
+React 애플리케이션을 만들 때 DOM을 직접 조작하는 것은 지양해야 하지만 그래야 하는 상황이 발생한다. 
+이럴 때 사용 하는 것 => useRef 라는 hook 함수. 
+
+보통, state의 값을 바꿀 때 대표적으로 hooks의 useState를 이용한다.
+- state가 변할 때마다 다시 렌더링 되면서 컴포넌트 내부 변수들이 초기화 된다. 
+
+useRef
+
+- 불필요한 리렌더링을 막는다. 컴포넌트의 속성만 조회, 수정한다. 
+- 컴포넌트가 렌더링이 되더라도 ref 안에 저장되어 있는 값은 변화하지 않는다.  
+- dom노드, 엘리먼트, react 컴포넌트 주소값을 참조할 수 있다.  
+- useRef를 남발, 남용하지 말자. 
+- react 특징이자 장점인 선언형 프로그래밍 원칙과 배치된다. 
+
+DOM 엘리먼트 주소값 활용해야 하는 경우 
+1) focus 
+: 대표적으로 input요소를 클릭하지 않고 포커스를 주고 싶을 때 많이 사용된다. input을 굳이 클릭하지 않아도 자동적으로 포커스가 되어 있게 해준다. 
+: 값을 여러개 입력하고, 첫번째 칸으로 이동하고 싶다? 
+: 선택하고 싶은 DOM에 속성으로 ref 값을 설정한다.
+2) text selection
+3) media playback
+4) 애니메이션 적용 
+5) d3.js, greensock 등 dom 기반 라이브러리 활용 
+
+```js
+const 주소값을_담는_그릇 = useRef(참조자료형) // ref 객체를 만들어준다.
+return (
+	<div>
+  		<input ref={주소값을_담는_그릇} type="text">
+  	</div>
+);
+```
+
+```js
+ function TextInputWithFocusButton(){
+ 	const inputEl = useRef(null);// ref 객체를 만들어준다.
+   	const onButtonClick = () =>{
+    	inputEl.current.focus(); // Ref 객채의 current 값은 우리가 선택하고자 하는 DOM을 가리킨다. // 포커싱을 해주는 dom api focus()를 호출한다.  
+    };
+ 	return (
+    	<>
+      		<input ref={inputEl} type="text" />
+      		<button onClick={onButtonClick}>Focus the input</button>
+      </>
+    );
+ }
+```
+![](https://velog.velcdn.com/images/fo_rdang/post/90ac5069-d4f5-4aea-9420-ab385e747819/image.png)
+
+```js
+import React, { useRef } from "react";
+
+const Focus = () => {
+  const firstRef = useRef(null);// ref 객체를 만들어준다.
+  const secondRef = useRef(null);
+  const thirdRef = useRef(null);
+
+  const handleInput = (event) => {
+    
+    if (event.key === "Enter") {
+      if (event.target === firstRef.current) {
+        secondRef.current.focus(); // Ref 객채의 current 값은 우리가 선택하고자 하는 DOM을 가리킨다. // 포커싱을 해주는 dom api focus()를 호출한다.  
+    };
+        event.target.value = "";
+      } else if (event.target === secondRef.current) {
+        thirdRef.current.focus();
+        event.target.value = "";
+      } else if (event.target === thirdRef.current) {
+        firstRef.current.focus();
+        event.target.value = "";
+      } else {
+        return;
+      }
+    }
+  };
+
+  return (
+    <div>
+      <h1>타자연습</h1>
+      <h3>각 단어를 바르게 입력하고 엔터를 누르세요.</h3>
+      <div>
+        <label>hello </label>
+        <input ref={firstRef} onKeyUp={handleInput} />
+      </div>
+      <div>
+        <label>world </label>
+        <input ref={secondRef} onKeyUp={handleInput} />
+      </div>
+      <div>
+        <label>codestates </label>
+        <input ref={thirdRef} onKeyUp={handleInput} />
+      </div>
+    </div>
+  );
+};
+
+export default Focus;
+
+```
