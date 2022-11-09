@@ -115,3 +115,4 @@ const str2 = JSON.stringify(obj, null, 2);
 ```
 
 이렇게 특정 언어의 내장 타입의 데이터를 외부에 전송하기 용이하도록 문자열로 변환하는 과정을 직렬화(serialization)이라고 부른다.
+
