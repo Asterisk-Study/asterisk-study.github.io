@@ -1,10 +1,11 @@
 ---
-title: "이유정 복습일지"
+title: "useRef"
 layout: post
 comments: true
 categories: [이유정/복습일지]
-tags: []
+tags: [이유정]
 ---
+
 2022-10-30 복습 
 
 React 애플리케이션을 만들 때 DOM을 직접 조작하는 것은 지양해야 하지만 그래야 하는 상황이 발생한다. 
