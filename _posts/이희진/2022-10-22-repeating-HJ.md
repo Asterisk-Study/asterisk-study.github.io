@@ -156,6 +156,20 @@ div { ... } // div 태그 요소 모두 선택
 * nodeValue: 텍스트 노드의 nodeValue 프로퍼티에 변경하고자 하는 값을 할당하면 변경이 된다.
 * textContent: nodeValue와 유사하나 HTML 마크업이 파싱되지 않아 자식 노드가 있을 경우 함부로 변경하면 자식 노드가 사라진다. 따라서 할당할 때 주의가 필요하다.
 * innerText 프로퍼티 또한 텍스트 노드를 변경할 수는 있으나 CSS에 의해 비표시된 요소 노드의 텍스트를 반환하지 않는 등 CSS에 영향을 크게 받아 잘 사용하지 않는다.
+<br />
 
+### 221113 || DOM(4)
+DOM 조작이란 새로운 노드를 생성해 DOM에 추가하거나 기존 노드를 삭제 또는 교체하는 것을 의미한다. 하지만 이는 성능에 영향을 미칠 수 있으므로 주의해서 다룰 필요가 있다.   
+     
+* innerHTML: 요소 노드의 HTML 마크업을 취득하거나 변경하는 프로퍼티로 반환값으로 요소 노드의 콘텐츠 영역(시작 태그와 종료 태그 사이)내에 포함된 모든 HTML 마크업을 문자열로 반환한다. 이때 textContent 프로퍼티와의 차이는 innerHTML은 HTML 마크업까지 포함한 문자열을 반환한다는 점에 있다. 해당 프로퍼티를 이용한 DOM 조작은 구현이 간단하고 직관적이라는 장점이 있으나 크로스 사이트 스크립팅 공격에 취약하다.
+* Element.prototype.insertAdjacentHTML: 해당 메서드는 기존 요소를 제거하지 않으면서 위치를 지정해 새로운 요소를 삽입한다. 두 번째 인수로 전달한 HTML 마크업 문자열을 파싱하고 그 결과로 생성된 노드를 첫 번째 인수로 전달한 위치에 삽입해 DOM에 반영한다. 해당 메서드는 innerHTML처럼 기존 요소들을 전부 지우고 처음부터 작성하는 것이 아니라 새롭게 삽입될 요소만 파싱해 자식 요소로 추가하는 원리라 효율적이긴 하나 마찬가지로 크로스 사이트 스크립팅 공격에 취약하다.
+    
+위에서는 HTML 마크업 문자열을 파싱하여 노드를 생성하고 DOM에 반영한다. 이 외에도 DOM은 노드르를 직접 생성/삽입/삭제/치환하는 메서드 또한 가지고 있다.  
 
+* Document.prototype.createElement(tag name): 요소 노드를 생성해 반환한다. 
+* Document.prototype.createTextNode(value of textNode): 텍스트 노드를 생성해 반환한다. 이렇게 추가한 텍스트 노드를 요소 노드의 자식 노드로 추가하고자 할 때는 Node.prototype.appendChild(childNode)메서드를 이용해서 자식 노드 자리에 텍스트 노드를 넣는다. 또한 이를 이용해 요소 노드를 DOM에 추가할 수도 있다. 
+* Node.prototype.insertBefore(newNode, childNode): 첫 번째 인수로 받은 노드를 두 번째 인수로 전달 받은 노드 앞에 삽입한다. 이때, 두 번째 인수 노드는 반드시 해당 메서드를 호출한 노드의 자식 노드여야 한다. 이러한 메서드(appendChild or insertBefore)를 이용해 노드를 이동시킬 수 있다. 
+* Node.prototype.cloneNode: 노드의 사본을 생성해 반환하는 메서드로 매개변수 deep에 true를 인수로 전달하면 노드를 깊은 복사하여 모든 자손 노드가 포함된 사본을 생성하고 false를 인수로 전달하거나 생략하면 노드를 얕은 복사하여 노드 자신만의 사본을 생성한다.
+* Node.prototype.replaceChild(newChild, oldChild): 자신을 호출한 노드의 자식 노드를 다른 노드로 교체하는 메서드다. 
+* Node.prototype.removeChild(child): 인수로 전달한 노드를 DOM에서 삭제한다.  
 
