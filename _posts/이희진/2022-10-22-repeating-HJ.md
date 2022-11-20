@@ -172,4 +172,14 @@ DOM 조작이란 새로운 노드를 생성해 DOM에 추가하거나 기존 노
 * Node.prototype.cloneNode: 노드의 사본을 생성해 반환하는 메서드로 매개변수 deep에 true를 인수로 전달하면 노드를 깊은 복사하여 모든 자손 노드가 포함된 사본을 생성하고 false를 인수로 전달하거나 생략하면 노드를 얕은 복사하여 노드 자신만의 사본을 생성한다.
 * Node.prototype.replaceChild(newChild, oldChild): 자신을 호출한 노드의 자식 노드를 다른 노드로 교체하는 메서드다. 
 * Node.prototype.removeChild(child): 인수로 전달한 노드를 DOM에서 삭제한다.  
+<br />
 
+### 221120 || DOM(5)
+HTML 요소는 여러 개의 어트리뷰트를 가질 수 있다. 이 어트리뷰트는 요소의 동작일 제어하기 위한 추가적인 정보를 제공하는데 시작 태그 안에 '어트리뷰트 이름 = "어트리뷰트값"'과 같은 형식으로 정의한다. 글로벌 어트리뷰트(id, class, style, title 등)와 이밴트 핸들러 어트리뷰트(onclick, onchange, onblur 등)는 모든 HTML 요소에 공통적으로 사용할 수 있지만 특정 요소에서만 사용 가능한 어트리뷰트도 존재한다. input 요소에서만 사용 가능한 type, value, checked가 그것이다. 만약 요소 노드의 모든 어트리뷰트 노드를 보고 싶다면 **element.prototype.attributes** 프로퍼티를 이용해 확인할 수 있다. 그 외에도 다양한 메소드 및 프로퍼티가 존재하는데 이는 다음과 같다. 
+* Element.prototype.getAttributes(어트리뷰트 이름): HTML 어트리뷰트 값 참조를 위해 사용하는 메소드다.
+* Element.prototype.setAttributes(어트리뷰트 이름, 어트리뷰트값): 어트리뷰트 값을 변경할 때 사용하는 메소드다.
+* Element.prototype.hasAttributes(어트리뷰트 이름): 해당 어트리뷰트의 존재 여부를 확인하는 메소드다.
+* Element.prototype.removeAttributes(어트리뷰트 이름): 해당 어트리뷰트를 삭제하는 메소드다. 
+
+요소 노드 객체에는 HTML 어트리뷰트에 대응하는 프로퍼티, DOM 프로퍼티가 존재한다. 이 DOM 프로퍼티들은 HTML 어트리뷰트 값을 초기값으로 가지고 있다. 이때 DOM 프로퍼티는 참조와 변경이 가능한 프로퍼티임을 기억해야 한다. 얼핏 생각하면 DOM 프로퍼티와 HTML 어트리뷰트가 비슷하다고 생각할 수 있으나 둘에게는 차이가 존재한다. 
+HTML 어트리뷰트는 HTML 요소의 초기 상태를 지정하는 것이다. 다시 말해 HTML 어트리뷰트 값은 HTML 요소의 초기 상태를 의미하고 이는 변하지 않는다. 반대로 DOM 프로퍼티는 사용자의 입력에 의한 상태 변화에 반응하여 언제나 최신 상태를 유지한다. 요약하면 HTML 어트리뷰트는 HTML 요소의 초기 상태 값을 관리하고 DOM 프로퍼티는 사용자의 입력에 의해 변경되는 최신 상태를 관리한다. 
