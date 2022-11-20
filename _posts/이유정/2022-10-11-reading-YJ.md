@@ -1,8 +1,9 @@
 ---
-layout: single
-title: 이유정  독서일지: 한 권으로 읽는 컴퓨터 구조와 프로그래밍
-categories: 
-tags: 이유정
+title: "이유정 독서일지(1장): 컴퓨터 내부의 언어 체계"
+layout: post
+comments: true
+categories: [이유정/독서일지]
+tags: []
 ---
 
 20221004 화요일 p.51~p.55 
