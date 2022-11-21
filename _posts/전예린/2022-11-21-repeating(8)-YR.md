@@ -3,7 +3,7 @@ title: "복습일지(8)"
 layout: post    
 comments: true  
 categories: [전예린/복습일지]
-tags: Redux
+tags: 트리,이진탐색트리, 그래프, 인접행렬,인접리스트
 ---
 
 ### 221121 || 트리, 그래프
