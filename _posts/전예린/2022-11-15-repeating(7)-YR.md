@@ -3,7 +3,7 @@ title: "복습일지(7)"
 layout: post    
 comments: true  
 categories: [전예린/복습일지]
-tags: Redux
+tags: 쿠키,세션,토큰,OAuth
 ---
 
 ### 221115 || 인증 & 보안
