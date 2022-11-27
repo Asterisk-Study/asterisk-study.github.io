@@ -120,3 +120,22 @@ HTML 요소는 여러 개의 어트리뷰트를 가질 수 있다. 이 어트리
 
 요소 노드 객체에는 HTML 어트리뷰트에 대응하는 프로퍼티, DOM 프로퍼티가 존재한다. 이 DOM 프로퍼티들은 HTML 어트리뷰트 값을 초기값으로 가지고 있다. 이때 DOM 프로퍼티는 참조와 변경이 가능한 프로퍼티임을 기억해야 한다. 얼핏 생각하면 DOM 프로퍼티와 HTML 어트리뷰트가 비슷하다고 생각할 수 있으나 둘에게는 차이가 존재한다. 
 HTML 어트리뷰트는 HTML 요소의 초기 상태를 지정하는 것이다. 다시 말해 HTML 어트리뷰트 값은 HTML 요소의 초기 상태를 의미하고 이는 변하지 않는다. 반대로 DOM 프로퍼티는 사용자의 입력에 의한 상태 변화에 반응하여 언제나 최신 상태를 유지한다. 요약하면 HTML 어트리뷰트는 HTML 요소의 초기 상태 값을 관리하고 DOM 프로퍼티는 사용자의 입력에 의해 변경되는 최신 상태를 관리한다. 
+<br />
+
+### 221127 || DOM(6)
+HTMLElement.prototype.style 프로퍼티는 요소 노드의 인라인 스타일을 취득하거나 추가 또는 변경한다. style 프로퍼티를 참조하면 CSSStyleDeclaration 타입의 객체를 반환하는데 이 객체는 다양한 CSS 프로퍼티에 대응하는 프로퍼티를 보유하며 이 프로퍼티에 값을 할당하면 해당 CSS 프로퍼티가 인라인 스타일로 HTML 요소에 추가되거나 변경된다. 이때 CSS 프로퍼티와 CSSStyleDeclaration 객체 프로퍼티 표기법에 차이가 있음을 알아야 한다.
+```js
+div.style.backgroundColor = 'yellow'
+// CSSStyleDeclaration 객체 프로퍼티는 카멜 케이스를 따른다.
+div.sytle['background-color'] = 'yellow'
+// css 프로퍼티는 케밥 케이스를 따른다.
+```
+style을 변경하고플 때 클래스 선택자를 사용하여 CSS class를 미리 정의한 다음, HTML 요소의 class 어트리뷰트 값을 변경하여 HTML 요소의 스타일을 변경할 수 있다. 이때 HTML 요소의 class 어트리뷰트를 조작하려면 class 어트리뷰트에 대응하는 요소 노드의 DOM 프로퍼티를 사용한다. 단, class 어트리뷰트에 대응하는 DOM 프로퍼티는 class가 아니라 className과 classList다. 
+* className <br/> 요소 노드의 classsName 프로퍼티를 참조하면 class 어트리뷰트 값을 문자열로 반환하고 요소 노드의 className 프로퍼팅 문자열을 할당하면 class 어트리뷰트 값을 할당한 문자열로 변경한다. 이때, className 프로퍼티는 문자열을 반환하므로 공백으로 구분된 여러 개의 클래스를 반환하는 경우 다루기가 불편하다.
+* classList <br/> Element.prototype.classList 프로퍼티는 class 어트리뷰트의 정보를 담은 DOMTokenList 객체를 반환한다. DOMTokenList 객체는 class 어트리뷰트의 정보를 나타내는 컬렉션 객체로서 유사 배열 객체이면서 이터러블이다. DOMTokenList 객체는 다음과 같은 메서드를 제공한다. 
+   * add(...className): 인수로 전달한 1개 이상의 문자열을 class 어트리뷰트 값으로 추가한다.
+   * remove(...className): 인수로 전달한 1개 이상의 문자열과 일치하는 클래스를 class 어트리뷰트에서 삭제한다. 인수로 전달한 문자열과 일치하는 클래스가 class 어트리뷰트에 없으면 에러 없이 무시된다.
+   * item(index): 인수로 전달한 index에 해당하는 클래스를 class 어트리뷰트에서 반환한다.
+   * contains(className): 인수로 전달한 문자열과 일치하는 클래스가 class 어트리뷰트에 포함되어 있는지 확인한다.
+   * replace(oldClassName, newClassName): class 어트리뷰트에서 첫 번째 인수로 전달한 문자열을 두 번째 인수로 전달한 문자열로 변경한다.
+   * toggle(className): class 어트리뷰트에 인수로 전달한 문자열과 일치하는 클래스가 존재하면 제거하고 존재하지 않으면 추가한다. 이때 두 번째 인수로 불리언 값으로 평가되는 조건식을 전달할 수 있는데 true면 class 어트리뷰트에 강제로 첫 번째 인수로 전달받은 문자열을 추가하고 false면 반대로 제거한다. 
