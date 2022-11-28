@@ -117,7 +117,7 @@ useCallback은 함수와는 상관없는 상태 값이 변할 때, 함수 컴포
 
 ! react 공식 문서에서도 인정하듯이, 아래의 두 식은 같다. !
 
-`useMemo((...)=> fn, deps) === useCallback(fn, deps)`
+`useCallback(fn, deps) is equivalent to useMemo(() => fn, deps).`
 
 <br/>
 
